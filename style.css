@@ -93,3 +93,7 @@ a {
 #myBtn:hover {
 	transform: scale(1.2);
 }
+
+.jumbotron {
+        max-height: 200px !important;
+}
