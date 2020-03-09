@@ -94,6 +94,6 @@ a {
 	transform: scale(1.2);
 }
 
-.jumbotron {
+.jumbotron.news {
         max-height: 200px !important;
 }
