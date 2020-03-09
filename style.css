@@ -95,5 +95,5 @@ a {
 }
 
 .jumbotron.news {
-        max-height: 200px !important;
+        max-height: auto !important;
 }
