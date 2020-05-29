@@ -34,24 +34,3 @@ function topFunction (){
 	document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 	mybutton.style.opacity = '0';
 }
-
-function saveToFirebase (email){
-	var emailObject = {
-		email : email,
-	};
-
-	firebase
-		.database()
-		.ref('subscription-entries')
-		.push()
-		.set(emailObject)
-		.then(
-			function (snapshot){
-				success(); // some success method
-			},
-			function (error){
-				console.log('error' + error);
-				error(); // some error method
-			},
-		);
-}

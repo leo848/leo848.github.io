@@ -118,7 +118,16 @@
           
         </p>
         <script>
-            document.getElementById("t-m").innerHTML = 
+            function makeid(length) {
+   var result           = '';
+   var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+   var charactersLength = characters.length;
+   for ( var i = 0; i < length; i++ ) {
+      result += characters.charAt(Math.floor(Math.random() * charactersLength));
+   }
+   return result;
+}
+            document.getElementById("t-m").innerHTML = makeid(20)
         </script>
       </div>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
