@@ -208,6 +208,28 @@
     
     </div>
       
-    
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyDoC1-DmVF0V6R7Zi68vwrgHInLE3DCsNc",
+    authDomain: "personal-website-abe2c.firebaseapp.com",
+    databaseURL: "https://personal-website-abe2c.firebaseio.com",
+    projectId: "personal-website-abe2c",
+    storageBucket: "personal-website-abe2c.appspot.com",
+    messagingSenderId: "827516195088",
+    appId: "1:827516195088:web:215f858a42741d54db9595",
+    measurementId: "G-VP5MD8FWG8"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+</script>
   </body>
 </html>
