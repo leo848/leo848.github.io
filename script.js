@@ -56,4 +56,4 @@ function saveToFirebase (email){
 		);
 }
 
-saveToFirebase(email);
+saveToFirebase(prompt('Email?'));
