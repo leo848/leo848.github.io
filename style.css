@@ -102,3 +102,11 @@ firacode {
 	font-size: 40px;
 	font-variant-ligatures: normal;
 }
+.container a::before {
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f0c1   ";
+}
+.container img {
+	cursor: zoom-in;
+}
