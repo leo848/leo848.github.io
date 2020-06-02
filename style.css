@@ -107,6 +107,32 @@ firacode {
 	font-weight: 900;
 	content: "\f0c1   ";
 }
+code {
+	background-color: transparent;
+	font-family: 'Fira Code', monospace;
+}
+body .gist .highlight {
+	background-color: transparent;
+	font-family: 'Fira Code', monospace;
+	font-size: 14px;
+}
+body .gist .blob-num {
+	color: #ced4da;
+	background-color: #495057;
+	pointer-events: none;
+}
+body .gist .highlight td {
+	padding: 5px 15px !important;
+	padding-bottom: 0;
+	line-height: 1;
+	font-family: inherit;
+	font-size: inherit;
+}
+.carousel-control-next::before,
+.carousel-control-prev::before,
+.gist-meta a::before {
+	content: "" !important;
+}
 .container img {
 	cursor: zoom-in;
 }
