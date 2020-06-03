@@ -7,11 +7,6 @@ html {
 .navbar {
 	font-family: Poppins !important;
 }
-
-/* img {
-	width: 100%;
-	height: auto;
-} */
 .nav-link {
 	animation: animate 1s ease alternate infinite !important;
 }
