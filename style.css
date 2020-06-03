@@ -124,13 +124,14 @@ body .gist .blob-num {
 body .gist .highlight td {
 	padding: 5px 15px !important;
 	padding-bottom: 0;
-	line-height: 1;
+	line-height: 0.8;
 	font-family: inherit;
 	font-size: inherit;
 }
 .carousel-control-next::before,
 .carousel-control-prev::before,
-.gist-meta a::before {
+.gist-meta a::before,
+[no-link]::before {
 	content: "" !important;
 }
 .container img {

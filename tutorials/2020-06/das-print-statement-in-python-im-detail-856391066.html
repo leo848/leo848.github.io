@@ -229,8 +229,81 @@
             <p>
                 Kurze Version: <br />Der Parameter <code>flush</code> sorgt
                 dafür, dass dein print-Statement sofort ausgeführt wird,
-                unabhängig von <code>end</code>.
+                unabhängig von <code>end</code>.<br />
+                Lange Version: Wenn in Python das print-Statement ausgeführt
+                wird, werden die Argumente nicht direkt gedruckt. Sie werden an
+                ein IO-System (Input-Output) gedruckt. Und dieses hat in den
+                meisten Fällen (glücklicherweise) einen Buffer. Dieser sorgt
+                dafür, dass es nicht sofort gedruckt wird, sondern erst, wenn
+                einer dieser Konditionen wahr wird: <br />
             </p>
+            <ul>
+                <li><code>\r</code> oder <code>\n</code> im String</li>
+                <li>Ende der Python-Datei wurde erreicht</li>
+                <li>
+                    Buffer ist "voll" (das heißt, das maximale Zeichenlimit für
+                    den Buffer wurde erreicht)
+                </li>
+                <li>
+                    Ein print-Statement mit <code>flush=True</code> wurde
+                    ausgeführt
+                </li>
+            </ul>
+            <p>
+                Nehmen wir einmal dieses Beispiel:
+            </p>
+            <script src="https://gist.github.com/leo848/cd5f33515f173fbd075e01c989196c29.js"></script>
+            <p>
+                Zuerst wird <code>Hallo </code>, dann
+                <code>Welt.</code> gedruckt, ohne einen Zeilenumbruch
+                dazwischen. Dazwischen liegt keine merkbare Verzögerung.
+            </p>
+            <h4>4. Der Parameter <code>file</code></h4>
+            <p>
+                Der Parameter <code>file</code> sorgt dafür, dass der Output
+                nicht in die Konsole ausgegeben wird, sondern in eine andere
+                Datei. Das Default ist hier <code>sys.stdout</code> (stdout für
+                standard output, oder Standardausgabe). Dies ist normalerweise
+                die Konsole in Python. Aber wenn du zu einer Datei schreiben
+                möchtest, kannst du dazu auch <code>print</code> mit dem
+                Argument <code>file</code> verwenden. Dies hier ist ein
+                Beispiel:
+            </p>
+            <script src="https://gist.github.com/leo848/f184f7a6d1c9a6824ad571288e56d660.js"></script>
+            <h4>Zusammenfassung</h4>
+            <ul>
+                <li>
+                    Das print-Statement in Python hat vier optionale Argumente:
+                    <code>sep</code>, <code>end</code>, <code>flush</code> und
+                    <code>file</code>.
+                </li>
+                <li>
+                    <code>sep</code> (engl. seperator) ist ein String, der die
+                    verschiedenen auszugebenden Argumente beim Ausgeben trennt.
+                    Normalwert " ".
+                </li>
+                <li>
+                    <code>end</code> ist ein String, der am Ende angefügt wird.
+                    Normalwert "\n".
+                </li>
+                <li>
+                    <code>flush</code> ist entweder <code>True</code> oder
+                    <code>False</code>, es sagt, ob der String unabhängig vom
+                    Buffer sofort zu gedruckt werden soll. Normalwert False.
+                </li>
+                <li>
+                    <code>file</code> ist ein IO-Objekt, das den Output erhält.
+                    Normalwert sys.stdout, die Konsole.
+                </li>
+            </ul>
+            <a
+                href="../index.html"
+                class="btn btn-primary btn-lg active"
+                role="button"
+                aria-pressed="true"
+                no-link
+                >Zurück zur Übersicht</a
+            >
         </div>
 
         <footer class="page-footer font-small blue">
