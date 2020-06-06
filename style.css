@@ -150,3 +150,7 @@ button a::before {
 [discord]:hover {
 	opacity: 1;
 }
+i.fab,
+i.fas {
+	transform: scale(1.2);
+}
