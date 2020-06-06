@@ -5,7 +5,7 @@ html {
 	font-variant-ligatures: normal !important;
 }
 .navbar {
-	font-family: Poppins !important;
+	font-family: -apple-system, Poppins !important;
 }
 .nav-link {
 	animation: animate 1s ease alternate infinite !important;
@@ -132,9 +132,21 @@ body .gist .highlight td {
 .carousel-control-next::before,
 .carousel-control-prev::before,
 .gist-meta a::before,
-[no-link]::before {
+[no-link]::before,
+button a::before {
 	content: "" !important;
 }
 .container img {
 	cursor: zoom-in;
+}
+[discord] {
+	position: fixed;
+	z-index: 2;
+	top: 55px;
+	right: 55px;
+	opacity: 0;
+	transition: all 2s;
+}
+[discord]:hover {
+	opacity: 1;
 }
