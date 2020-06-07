@@ -71,6 +71,10 @@ html {
 a {
 	text-decoration: none !important;
 	color: inherit;
+	transition: 2s !important;
+}
+.container a:hover {
+	text-decoration: underline !important;
 }
 #myBtn {
 	display: block;
@@ -134,8 +138,12 @@ body .gist .highlight td {
 .gist-meta a::before,
 [no-link]::before,
 button a::before,
-.btn::before {
+.btn::before,
+.gist a::before {
 	content: "" !important;
+}
+.gist a {
+	color: #0366d6;
 }
 .container img {
 	cursor: zoom-in;
@@ -154,4 +162,7 @@ button a::before,
 i.fab,
 i.fas {
 	transform: scale(1.2);
+}
+mono {
+	font-family: "Fira Code", monospace;
 }

@@ -43,8 +43,10 @@ $('.container img').addClass('img-enlargable').click(function (){
 		$('body').off('keyup.modal-close');
 	}
 	color =
-		src.slice(-3, -1) == 'svg'
-			? 'RGBA(255,255,255,1)'
+		(src.slice(-3, -1).toLowerCase() == 'pn' ||
+			src.slice(-3, -1).toLowerCase() == 'sv') &&
+		src.toLowerCase().includes('logo')
+			? 'RGBA(255,255,255,0.8)'
 			: 'RGBA(0,0,0,.8)';
 	modal = $('<div>')
 		.css({

@@ -186,8 +186,92 @@
                 Auszeichnungssprache der Welt. Sie wird unter anderem von
                 <a href="http://github.com">GitHub</a>,
                 <a href="http://reddit.com">Reddit</a> und
-                <a href="http://discord.com">Discord</a> verwendet.
+                <a href="http://discord.com">Discord</a> verwendet. Dies liegt
+                vor allem an der einfachen Handhabung. Wenn du schon einmal auf
+                GitHub unterwegs warst, hast du wahrscheinlich auch schon einmal
+                diesen Dateinamen hier gesehen: <br /><code>README.md</code
+                ><br />Die README.md-Datei in einem GitHub-Repo ist die lange
+                Beschreibung. Sie erklärt, wofür das Projekt gut ist, wie man es
+                verwendet, etc. Und sie muss in Markdown geschrieben werden!
             </p>
+            <h4>Wie wird Markdown gerendert?</h4>
+            <p>
+                Markdown wird von einem sogenannten <i>Preprocessor</i> zu HTML
+                umgeschrieben, welches dann im Browser auch so angezeigt werden
+                kann.
+            </p>
+            <h4>Die Markdown-Syntax</h4>
+            <pre>
+## Überschriften in Markdown
+# h1
+## h2
+### h3
+#### h4
+##### h5
+###### h6
+h1 und h2 kann man auch in dieser alternativen Art darstellen:
+
+Überschrift 1
+=============
+Überschrift 2
+-------------
+            </pre>
+            <script src="https://gist.github.com/leo848/83a756b59f44aae3418cb3b63a23b6d7.js"></script>
+            <pre>
+## Betonung
+
+Man kann Text mit *Asterisken* oder _Unterstrichen_ kursiv darstellen.
+Verwenden man **doppelte Asterisken** oder __doppelte Unterstriche__, ist der Text fett.
+Wenn du **doppelte Asterisken und _einfache Unterstriche_** verwendest, ist der Text zugleich fett und kursiv.
+Für durchgestrichenen Text verwende ~~zwei Tilden~~ (auf der Tastatur AltGr + +)
+Oder kombiniere **_~~alles~~_**.
+            </pre>
+            <script src="https://gist.github.com/leo848/f0589d09449c41652916462025bd49be.js"></script>
+            <pre>
+## Listen
+1. Erster Punkt einer geordneten Liste
+2. Ein anderer Punkt
+    * Ungeordnete Sub-Liste.
+1. Die Zahlen sind eigentlich egal, es müssen nur Zahlen sein (Beim von GitHub favorisierten Markdown wird die Zahl angepasst)
+    1. Geordnete Sub-Liste
+4. Und noch ein Punkt.
+
+    Man kann Absätze in Listenelementen richtig einrücken. Achte auf die leere Zeile oben und die Leerzeichen am Anfang (mindestens eins, aber wir verwenden hier drei, um auch den Markdown-Code auszurichten).
+
+    Für einen Zeilenumbruch ohne Absatz musst du zwei Leerzeichen am Anfang verwenden.
+    Beachte, dass diese Zeile separat ist, aber im gleichen Absatz.
+    Das ist gegenteilig zum von GitHub favorisierten Zeilenumbruch, bei dem man keine Einrückung braucht.
+
+* Für ungeordnete Listen kann man Sternchen verwenden
+- Oder Minuszeichen
++ Oder Pluszeichen
+            </pre>
+            <script src="https://gist.github.com/leo848/8f57d47bb74f76553c586fb7d57ecb52.js"></script>
+            <pre>
+## Links
+[Das hier ist ein Inline-Link](https://www.leo848.github.io)
+
+[Das hier ist ein Inline-Link mit Titel](https://www.leo848.github.io "Startseite")
+
+[Ein Refenzlink][Willkürlicher Text, der nicht zwischen Groß- und Kleinschreibung unterscheidet]
+
+[Eine relative Referenz zu einer Datei](../../assets/img/MarkdownLogo.png)
+
+[Du kannst Zahlen für Linkreferenzen verwenden][1]
+
+Oder lasse es leer und nutze den [Linktext selbst].
+
+URLs und URLs in angle brackets werden automatisch zu Links.
+http://www.example.com oder <http://www.example.com> und manchmal 
+example.com (aber bei GitHub z.B. nicht).
+
+Etwas Text, der beweist, dass die Refenzlinks überall kommen können
+
+[willkürlicher text, der nicht zwischen groß- und kleinschreibung unterscheidet]: https://www.mozilla.org
+[1]: http://example.com
+[linktext selbst]: http://www.reddit.com
+            </pre>
+            <script src="https://gist.github.com/leo848/fd6deec90eee7f5c98458d3031419bb5.js"></script>
             <a
                 href=".."
                 class="btn btn-primary btn-lg active"
@@ -198,7 +282,7 @@
             >
         </div>
 
-        <footer class="page-footer font-small blue">
+        <footer class="page-footer font-small footer-primary">
             <div class="footer-copyright text-center py-3">
                 &copy; 2020 Copyright:
                 <a href="https://leo848.github.io/"> Leo Blume</a>
