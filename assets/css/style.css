@@ -133,7 +133,8 @@ body .gist .highlight td {
 .carousel-control-prev::before,
 .gist-meta a::before,
 [no-link]::before,
-button a::before {
+button a::before,
+.btn::before {
 	content: "" !important;
 }
 .container img {
