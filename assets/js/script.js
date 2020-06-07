@@ -42,10 +42,14 @@ $('.container img').addClass('img-enlargable').click(function (){
 		modal.remove();
 		$('body').off('keyup.modal-close');
 	}
+	color =
+		src.slice(-3, -1) == 'svg'
+			? 'RGBA(255,255,255,1)'
+			: 'RGBA(0,0,0,.8)';
 	modal = $('<div>')
 		.css({
 			background     :
-				'RGBA(0,0,0,.8) url(' + src + ') no-repeat center',
+				color + ' url(' + src + ') no-repeat center',
 			backgroundSize : 'contain',
 			width          : '100%',
 			height         : '100%',
