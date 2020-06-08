@@ -75,7 +75,6 @@ img {
 .container a:hover {
 	text-decoration: underline !important;
 }
-
 #myBtn {
 	display: block;
 	opacity: 0;
