@@ -4,32 +4,7 @@
         <title>Einf&uuml;hrung in Markdown | leo848.github.io</title>
         <meta
             name="description"
-            content="Markdown"
-            (.md)
-            ist
-            eine
-            Auszeichnungssprache,
-            die
-            unter
-            anderem
-            von
-            GitHub
-            f&uuml;r
-            die
-            Beschreibungen
-            der
-            Projekte
-            genutzt
-            wird.
-            In
-            diesem
-            Tutorial
-            lernst
-            du
-            die
-            Basics
-            dieser
-            Sprache.
+            content="Markdown (.md) ist eine Auszeichnungssprache, die unter anderem von GitHub f&uuml;r die Beschreibungen der Projekte genutzt wird. In diesem Tutorial lernst du die Basics dieser Sprache."
         />
         <meta
             name="google-site-verification"
@@ -45,6 +20,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="../../../assets/css/style.css" />
+        <link rel="stylesheet" href="../../../assets/css/footer.css" />
         <script src="../../../assets/js/script.js" defer></script>
         <link
             rel="stylesheet"
@@ -116,12 +92,12 @@
                             >Informatik <span>&#128187;</span></a
                         >
                     </li>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="../../../kontakt"
                             >Kontakt <span>&#128233;</span></a
                         >
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="../../../tutorials"
                             >Tutorials <span>&#127891;</span></a
                         >
@@ -253,7 +229,7 @@ Oder kombiniere **_~~alles~~_**.
 
 [Das hier ist ein Inline-Link mit Titel](https://www.leo848.github.io "Startseite")
 
-[Ein Refenzlink][Willkürlicher Text, der nicht zwischen Groß- und Kleinschreibung unterscheidet]
+[Ein Referenzlink][Willkürlicher Text, der nicht zwischen Groß- und Kleinschreibung unterscheidet]
 
 [Eine relative Referenz zu einer Datei](../../assets/img/MarkdownLogo.png)
 
@@ -265,13 +241,77 @@ URLs und URLs in angle brackets werden automatisch zu Links.
 http://www.example.com oder <http://www.example.com> und manchmal 
 example.com (aber bei GitHub z.B. nicht).
 
-Etwas Text, der beweist, dass die Refenzlinks überall kommen können
+Etwas Text, der beweist, dass die Referenzlinks überall kommen können
 
 [willkürlicher text, der nicht zwischen groß- und kleinschreibung unterscheidet]: https://www.mozilla.org
 [1]: http://example.com
 [linktext selbst]: http://www.reddit.com
             </pre>
             <script src="https://gist.github.com/leo848/fd6deec90eee7f5c98458d3031419bb5.js"></script>
+            <pre>
+## Bilder
+
+Mein Logo (hovere darüber, um den Titeltext sehen zu können):
+Inline: 
+![Alternativtext](https://leo848.github.io/assets/icons/android-chrome-192x192.png "Titel Logo 1")
+
+Mit Referenz: 
+![Alternativtext][logo]
+
+[logo]: https://leo848.github.io/assets/icons/android-chrome-192x192.png "Titel Logo 2"
+            </pre>
+            <script src="https://gist.github.com/leo848/6b55a6f9ca39dc1411d52f56406815bd.js"></script>
+            <pre>
+## Code- und Syntaxhervorhebung
+Codeblöcke gehören zu Markdown, aber Syntaxhervorhebung standardmäßig nicht. In Github-favorisiertem Markdown allerdings schon.
+Inline-Codeblöcke kannst du so darstellen:
+
+Inline `code` verwendet `Backticks`.
+
+Codeblöcke werden durch drei Backticks umschlossen. Für Syntaxhervorhebung muss man die gewünschte Sprache in die obere Zeile nach den Backticks schreiben.
+
+```javascript
+// JavaScript-Syntaxhervorhebung
+var content = document.getElementById("content");
+function addContent(string){ // füge neuen Inhalt hinzu
+    content.innerHTML += string;
+}
+```
+
+```python
+# Python-Syntaxhervorhebung
+print("Milch", "Brot", "Wasser", "Honig", sep=", ") # erinnerst du dich?
+```
+            </pre>
+            <script src="https://gist.github.com/leo848/4f5cde3ee9be60d969cd5ca24a002571.js"></script>
+            <pre>
+## Blockquoten
+> Blockquoten eignen sich sehr gut für Zitate oder Antworten bei Emails.
+> Diese Zeile gehört zur gleichen Blockquote.
+
+Ende der Blockquote.
+
+> Du kannst auch *inline* **Markdown** innerhalb von `Blockquoten` verwenden.
+            </pre>
+
+            <script src="https://gist.github.com/leo848/73f05d30793eb6c4178240293f855c6b.js"></script>
+            <pre>
+## Horizontale Linien
+Drei oder mehr...
+
+---
+
+Bindestriche
+
+***
+
+Sternchen
+
+___
+
+Unterstriche
+            </pre>
+            <script src="https://gist.github.com/leo848/7205c47225a6ac478cd13dedabe382ed.js"></script>
             <a
                 href=".."
                 class="btn btn-primary btn-lg active"
@@ -282,11 +322,34 @@ Etwas Text, der beweist, dass die Refenzlinks überall kommen können
             >
         </div>
 
-        <footer class="page-footer font-small footer-primary">
-            <div class="footer-copyright text-center py-3">
-                &copy; 2020 Copyright:
-                <a href="https://leo848.github.io/"> Leo Blume</a>
-                <a href="https://leo848.github.io/impressum"> Impressum</a>
+        <footer>
+            <div class="copyright">
+                <p>
+                    &copy 2020 -
+                    <a href="https://leo848.github.io">Leo Blume</a
+                    ><a href="https://leo848.github.io/impressum">
+                        | Impressum</a
+                    >
+                </p>
+            </div>
+            <div class="social">
+                <a href="https://leo848.github.io/kontakt" class="support"
+                    >Kontakt</a
+                >
+                <a
+                    href="https://discord.gg/TDr2mrj"
+                    target="_blank"
+                    class="discord"
+                    ><i class="fab fa-discord"></i
+                ></a>
+                <a href="mailto:leoblume@gmx.de" class="tweet"
+                    ><i class="fas fa-envelope"></i
+                ></a>
+                <a
+                    href="https://www.github.com/leo848/leo848.github.io"
+                    class="linked"
+                    ><i class="fas fa-code"></i
+                ></a>
             </div>
         </footer>
         <button onclick="topFunction()" id="myBtn" title="Go to top">

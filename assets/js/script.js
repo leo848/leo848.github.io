@@ -49,6 +49,16 @@ $('.container img').addClass('img-enlargable').click(function (){
 			? 'RGBA(255,255,255,0.8)'
 			: 'RGBA(0,0,0,.8)';
 	modal = $('<div>')
+		.append(
+			$('<i>').addClass('fa').addClass('fa-times').css({
+				zIndex   : '10001',
+				position : 'absolute',
+				right    : '10px',
+				top      : '10px',
+				fontSize : 50,
+				cursor   : 'pointer',
+			}),
+		)
 		.css({
 			background     :
 				color + ' url(' + src + ') no-repeat center',

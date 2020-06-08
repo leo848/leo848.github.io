@@ -15,6 +15,10 @@ html {
 	width: 100%;
 }
 
+img {
+	width: 100%;
+}
+
 @keyframes animate {
 	0% {
 		transform: scale(1.0) !important;
@@ -68,14 +72,10 @@ html {
 .btn-block:hover {
 	font-size: 35px !important;
 }
-a {
-	text-decoration: none !important;
-	color: inherit;
-	transition: 2s !important;
-}
 .container a:hover {
 	text-decoration: underline !important;
 }
+
 #myBtn {
 	display: block;
 	opacity: 0;
@@ -112,7 +112,8 @@ firacode {
 	font-weight: 900;
 	content: "\f0c1   ";
 }
-code {
+code,
+pre {
 	background-color: transparent;
 	font-family: 'Fira Code', monospace;
 }
@@ -165,4 +166,11 @@ i.fas {
 }
 mono {
 	font-family: "Fira Code", monospace;
+}
+.card-body {
+	padding-bottom: 0 !important;
+	margin-bottom: 0 !important;
+}
+.card-footer {
+	height: 3.5rem;
 }
