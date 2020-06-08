@@ -53,7 +53,7 @@ $('.container img').addClass('img-enlargable').click(function (){
 			$('<i>').addClass('fa').addClass('fa-times').css({
 				zIndex   : '10001',
 				position : 'absolute',
-				right    : '10px',
+				right    : '20px',
 				top      : '10px',
 				fontSize : 50,
 				cursor   : 'pointer',

@@ -15,8 +15,12 @@ html {
 	width: 100%;
 }
 
-img {
+img.img-enlargable {
 	width: 100%;
+}
+
+.thumbnail {
+	border-bottom: none !important;
 }
 
 @keyframes animate {
