@@ -62,7 +62,8 @@ img.img-enlargable {
 }
 .btn-block {
 	font-size: 30px !important;
-	transition: 0.5s cubic-bezier(0.25, 0.1, 0.4, 2.2);
+	transition: 0.5s
+		cubic-bezier(0.25, 0.1, 0.4, 2.2);
 }
 .btn-block:nth-child(1) {
 	background-color: #fcb045;
@@ -180,4 +181,25 @@ mono {
 }
 .card-footer {
 	height: 3.5rem;
+}
+.card {
+	margin-bottom: 20px !important;
+}
+.logo {
+	width: 25% !important;
+}
+.w-50 {
+	width: 50% !important;
+}
+@media screen and (min-width: 600px) {
+	.bricklayer-column-sizer {
+		/* divide by 2. */
+		width: 50%;
+	}
+}
+@media screen and (min-width: 900px) {
+	.bricklayer-column-sizer {
+		/* divide by 3. */
+		width: 33.3%;
+	}
 }

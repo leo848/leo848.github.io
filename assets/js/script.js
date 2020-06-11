@@ -35,50 +35,72 @@ function topFunction (){
 	mybutton.style.opacity = '0';
 }
 
-$('.container img').addClass('img-enlargable').click(function (){
-	var src = $(this).attr('src');
-	var modal;
-	function removeModal (){
-		modal.remove();
-		$('body').off('keyup.modal-close');
-	}
-	color =
-		(src.slice(-3, -1).toLowerCase() == 'pn' ||
-			src.slice(-3, -1).toLowerCase() == 'sv') &&
-		src.toLowerCase().includes('logo')
-			? 'RGBA(255,255,255,0.8)'
-			: 'RGBA(0,0,0,.8)';
-	modal = $('<div>')
-		.append(
-			$('<i>').addClass('fa').addClass('fa-times').css({
-				zIndex   : '10001',
-				position : 'absolute',
-				right    : '20px',
-				top      : '10px',
-				fontSize : 50,
-				cursor   : 'pointer',
-			}),
-		)
-		.css({
-			background     :
-				color + ' url(' + src + ') no-repeat center',
-			backgroundSize : 'contain',
-			width          : '100%',
-			height         : '100%',
-			position       : 'fixed',
-			zIndex         : '10000',
-			top            : '0',
-			left           : '0',
-			cursor         : 'zoom-out',
-		})
-		.click(function (){
-			removeModal();
-		})
-		.appendTo('body');
-	//handling ESC
-	$('body').on('keyup.modal-close', function (e){
-		if (e.key === 'Escape') {
-			removeModal();
+$('.container img')
+	.addClass('img-enlargable')
+	.click(function (){
+		var src = $(this).attr('src');
+		var modal;
+		function removeModal (){
+			modal.remove();
+			$('body').off('keyup.modal-close');
 		}
+		color =
+			(src.slice(-3, -1).toLowerCase() ==
+				'pn' ||
+				src.slice(-3, -1).toLowerCase() ==
+					'sv') &&
+			src.toLowerCase().includes('logo')
+				? 'RGBA(255,255,255,0.8)'
+				: 'RGBA(0,0,0,.8)';
+		modal = $('<div>')
+			.append(
+				$('<i>')
+					.addClass('fa')
+					.addClass('fa-times')
+					.css({
+						zIndex   : '10001',
+						position : 'absolute',
+						right    : '20px',
+						top      : '10px',
+						fontSize : 50,
+						cursor   : 'pointer',
+					}),
+			)
+			.css({
+				background     :
+					color +
+					' url(' +
+					src +
+					') no-repeat center',
+				backgroundSize : 'contain',
+				width          : '100%',
+				height         : '100%',
+				position       : 'fixed',
+				zIndex         : '10000',
+				top            : '0',
+				left           : '0',
+				cursor         : 'zoom-out',
+			})
+			.click(function (){
+				removeModal();
+			})
+			.appendTo('body');
+		//handling ESC
+		$(
+			'body',
+		).on('keyup.modal-close', function (e){
+			if (e.key === 'Escape') {
+				removeModal();
+			}
+		});
 	});
-});
+
+$('.container a').attr('target', '_blank');
+$('.container a[no-blank], .btn').attr(
+	'target',
+	'_self',
+);
+
+var bricklayer = new Bricklayer(
+	document.querySelector('.bricklayer'),
+);

@@ -22,6 +22,11 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <link
+            rel="stylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.css"
+        />
+        <script src="//cdnjs.cloudflare.com/ajax/libs/bricklayer/0.4.2/bricklayer.min.js"></script>
         <link rel="stylesheet" href="../assets/css/style.css" />
         <link rel="stylesheet" href="../assets/css/footer.css" />
         <script src="../assets/js/script.js" defer></script>
@@ -145,9 +150,9 @@
             <li class="breadcrumb-item active">Tutorials</li>
         </ul>
         <div class="container">
-            <div class="card-columns">
-                    <!--python script go here-->
-<!-- ADDED BY BACKEND. -->
+            <div class="bricklayer">
+                <!--python script go here-->
+                <!-- ADDED BY BACKEND. -->
                 <div class="card">
                     <img
                         class="card-img-top img-thumbnail"
@@ -159,9 +164,17 @@
                             Top 10 Codeeditoren in 2020
                         </h5>
                         <p class="card-text">
-                            Visual Studio Code, Sublime Text oder Vim: Bestimmt hast du schon einen dieser Namen geh&ouml;rt. Aber welcher Codeeditor ist das Beste f&uuml;r wen? All das und noch mehr wird in diesem Tutorial erkl&auml;rt.
+                            Visual Studio Code, Sublime Text oder Vim: Bestimmt
+                            hast du schon einen dieser Namen geh&ouml;rt. Aber
+                            welcher Codeeditor ist das Beste f&uuml;r wen? All
+                            das und noch mehr wird in diesem Tutorial
+                            erkl&auml;rt.
                         </p>
-                        <a href="2020-06/top-10-codeeditoren-in-2020-714441196.html" class="btn btn-primary no-link">Mehr lesen</a>
+                        <a
+                            href="2020-06/top-10-codeeditoren-in-2020-714441196.html"
+                            class="btn btn-primary no-link"
+                            >Mehr lesen</a
+                        >
                         <footer class="card-footer">
                             <small class="text-muted">
                                 11.06.2020
@@ -169,7 +182,6 @@
                         </footer>
                     </div>
                 </div>
-
 
                 <!-- ADDED BY BACKEND. -->
                 <div class="card">
@@ -295,6 +307,9 @@
                 </div>
             </div>
         </div>
+        <button onclick="topFunction()" id="myBtn" title="Go to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
         <footer>
             <div class="copyright">
                 <p>
