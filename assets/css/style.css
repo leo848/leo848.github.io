@@ -203,3 +203,8 @@ mono {
 		width: 33.3%;
 	}
 }
+@media screen and (min-width: 1500px) {
+	.bricklayer-column-sizer {
+		width: 25%;
+	}
+}
