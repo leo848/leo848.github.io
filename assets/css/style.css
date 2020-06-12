@@ -205,6 +205,7 @@ mono {
 }
 @media screen and (min-width: 1500px) {
 	.bricklayer-column-sizer {
+		/* divide by 4. */
 		width: 25%;
 	}
 }
