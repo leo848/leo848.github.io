@@ -71,10 +71,18 @@ $('.container img')
 						transform       :
 							'translate(-50%)',
 						color           : 'white',
-						backgroundColor : 'black',
+						backgroundColor :
+							'RGBA(0, 0, 0, 0.6)',
 						fontSize        : '20px',
 						fontFamily      :
 							'Fira Code',
+						cursor          : 'text',
+						borderRadius    : '5px',
+						padding         :
+							'3px 5px',
+					})
+					.click(() => {
+						console.log('');
 					}),
 			)
 			.append(
@@ -86,9 +94,13 @@ $('.container img')
 					transform       :
 						'translate(-50%)',
 					color           : 'white',
-					backgroundColor : 'black',
+					backgroundColor :
+						'RGBA(0, 0, 0, 0.6)',
 					fontSize        : '20px',
 					fontFamily      : 'Fira Code',
+					cursor          : 'text',
+					borderRadius    : '5px',
+					padding         : '3px 5px',
 				}),
 			)
 			.append(
