@@ -185,16 +185,16 @@ mono {
 .card {
 	margin-bottom: 20px !important;
 }
-.logo {
-	width: 25% !important;
-}
-.w-50 {
-	width: 50% !important;
-}
 @media screen and (min-width: 600px) {
 	.bricklayer-column-sizer {
 		/* divide by 2. */
 		width: 50%;
+	}
+	.logo {
+		width: 50% !important;
+	}
+	.w-50 {
+		width: 100% !important;
 	}
 }
 @media screen and (min-width: 900px) {
@@ -202,10 +202,22 @@ mono {
 		/* divide by 3. */
 		width: 33.3%;
 	}
+	.logo {
+		width: 25% !important;
+	}
+	.w-50 {
+		width: 50% !important;
+	}
 }
 @media screen and (min-width: 1500px) {
 	.bricklayer-column-sizer {
 		/* divide by 4. */
 		width: 25%;
+	}
+	.logo {
+		width: 20% !important;
+	}
+	.w-50 {
+		width: 40% !important;
 	}
 }
