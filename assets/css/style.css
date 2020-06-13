@@ -185,7 +185,15 @@ mono {
 .card {
 	margin-bottom: 20px !important;
 }
-@media screen and (min-width: 600px) {
+@media (max-width: 575.98px) {
+	.logo {
+		width: 50% !important;
+	}
+	.w-50 {
+		width: 100% !important;
+	}
+}
+@media (min-width: 576px) {
 	.bricklayer-column-sizer {
 		/* divide by 2. */
 		width: 50%;
@@ -197,7 +205,9 @@ mono {
 		width: 100% !important;
 	}
 }
-@media screen and (min-width: 900px) {
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
 	.bricklayer-column-sizer {
 		/* divide by 3. */
 		width: 33.3%;
@@ -209,15 +219,18 @@ mono {
 		width: 50% !important;
 	}
 }
-@media screen and (min-width: 1500px) {
+@media (min-width: 1400px) {
 	.bricklayer-column-sizer {
-		/* divide by 4. */
+		/* divide by 3. */
 		width: 25%;
 	}
-	.logo {
-		width: 20% !important;
+	.container {
+		min-width: 80%;
 	}
-	.w-50 {
-		width: 40% !important;
+}
+@media (min-width: 1800px) {
+	.bricklayer-column-sizer {
+		/* divide by 3. */
+		width: 20%;
 	}
 }
