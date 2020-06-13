@@ -39,6 +39,7 @@ $('.container img')
 	.addClass('img-enlargable')
 	.click(function (){
 		var src = $(this).attr('src');
+		var alt = $(this).attr('alt');
 		var modal;
 		function removeModal (){
 			modal.remove();
@@ -53,6 +54,43 @@ $('.container img')
 				? 'RGBA(255,255,255,0.8)'
 				: 'RGBA(0,0,0,.8)';
 		modal = $('<div>')
+			.append(
+				$('<p>')
+					.html(
+						src.split('/')[
+							src.split('/')
+								.length - 1
+						],
+					)
+					.css({
+						position        :
+							'absolute',
+						zIndex          : '10001',
+						left            : '50%',
+						top             : '0%',
+						transform       :
+							'translate(-50%)',
+						color           : 'white',
+						backgroundColor : 'black',
+						fontSize        : '20px',
+						fontFamily      :
+							'Fira Code',
+					}),
+			)
+			.append(
+				$('<p>').html(alt).css({
+					position        : 'absolute',
+					zIndex          : '10001',
+					left            : '50%',
+					bottom          : '0%',
+					transform       :
+						'translate(-50%)',
+					color           : 'white',
+					backgroundColor : 'black',
+					fontSize        : '20px',
+					fontFamily      : 'Fira Code',
+				}),
+			)
 			.append(
 				$('<i>')
 					.addClass('fa')
