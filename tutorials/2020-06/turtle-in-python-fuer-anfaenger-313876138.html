@@ -1,260 +1,261 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <title>
-            Turtle in Python f&uuml;r Anf&auml;nger | leo848.github.io
-        </title>
-        <meta
-            name="description"
-            content="Turtle ist ein Python-Modul, das aus der Programmiersprache Logo hervorgeht und diese erweitert. Grundlegend gibt es eine GUI, auf der mithilfe von Python-Befehlen etwas gemalt wird. Dieses Tutorial erkl&auml;rt die grundlegenden Funktionen und gibt einige Beispielprogramme f&uuml;r verschiedene Dinge."
-        />
-        <meta
-            name="google-site-verification"
-            content="w7c1Sr16VtH5GbJ_rKbexyTbWvg9Nix5RaAbENyK8j8"
-        />
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="../../../assets/css/style.css" />
-        <link rel="stylesheet" href="../../../assets/css/footer.css" />
-        <script src="../../../assets/js/script.js" defer></script>
-        <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-            crossorigin="anonymous"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/mousetrap@1.6.5/mousetrap.min.js"></script>
-        <script
-            data-ad-client="ca-pub-8678326294748904"
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="../../../assets/icons/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="../../../assets/icons/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="../../../assets/icons/favicon-16x16.png"
-        />
-        <link rel="manifest" href="../../../assets/web/site.webmanifest" />
-        <script
-            data-ad-client="ca-pub-8678326294748904"
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-    </head>
-    <body>
-        <div id="progressbar"></div>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-            <a class="navbar-brand" href="#">Leo Blume</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapsibleNavbar"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../.."
-                            >Home <span>&#127968;</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../news"
-                            >News <span>&#128240;</span>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../&Uuml;bermich"
-                            >&Uuml;ber mich <span>&#128102;</span></a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../informatik"
-                            >Informatik <span>&#128187;</span></a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../kontakt"
-                            >Kontakt <span>&#128233;</span></a
-                        >
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../../../tutorials"
-                            >Tutorials <span>&#127891;</span></a
-                        >
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="navbardrop"
-                            data-toggle="dropdown"
-                        >
-                            Projekte <span>&#128571;</span>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a
-                                class="dropdown-item"
-                                href="https://leo848.github.io/draw"
-                                target="_blank"
-                                >Malprogramm &#128396;</a
-                            >
-                            <a
-                                class="dropdown-item"
-                                href="https://leo848.github.io/binary-clock"
-                                #
-                                target="_blank"
-                                >Bin&auml;ruhr &#8986;</a
-                            >
-                            <a
-                                class="dropdown-item"
-                                href="https://leo848.github.io/website/randomtext.html"
-                                target="_blank"
-                                >Zuf&auml;lliger Text &#9997;</a
-                            >
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../..">Startseite</a></li>
-            <li class="breadcrumb-item"><a href="..">Tutorials</a></li>
-            <li class="breadcrumb-item"><a href="/">2020-06</a></li>
-            <li class="breadcrumb-item active">Turtle in Python f&u...</li>
-        </ul>
+	<head>
+		<title>
+			Turtle in Python f&uuml;r Anf&auml;nger | leo848.github.io
+		</title>
+		<meta
+			name="description"
+			content="Turtle ist ein Python-Modul, das aus der Programmiersprache Logo hervorgeht und diese erweitert. Grundlegend gibt es eine GUI, auf der mithilfe von Python-Befehlen etwas gemalt wird. Dieses Tutorial erkl&auml;rt die grundlegenden Funktionen und gibt einige Beispielprogramme f&uuml;r verschiedene Dinge."
+		/>
+		<meta
+			name="google-site-verification"
+			content="w7c1Sr16VtH5GbJ_rKbexyTbWvg9Nix5RaAbENyK8j8"
+		/>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../../../assets/css/style.css" />
+		<link rel="stylesheet" href="../../../assets/css/footer.css" />
+		<script src="../../../assets/js/script.js" defer></script>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+			integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+			crossorigin="anonymous"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/mousetrap@1.6.5/mousetrap.min.js"></script>
+		<script
+			data-ad-client="ca-pub-8678326294748904"
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+		></script>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../../assets/icons/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../../assets/icons/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../../assets/icons/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../../../assets/web/site.webmanifest" />
+		<script
+			data-ad-client="ca-pub-8678326294748904"
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+		></script>
+	</head>
+	<body>
+		<div id="progressbar"></div>
+		<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+			<a class="navbar-brand" href="#">Leo Blume</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#collapsibleNavbar"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="../../.."
+							>Home <span>&#127968;</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../../news"
+							>News <span>&#128240;</span>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../../&Uuml;bermich"
+							>&Uuml;ber mich <span>&#128102;</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../../informatik"
+							>Informatik <span>&#128187;</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../../kontakt"
+							>Kontakt <span>&#128233;</span></a
+						>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="../../../tutorials"
+							>Tutorials <span>&#127891;</span></a
+						>
+					</li>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbardrop"
+							data-toggle="dropdown"
+						>
+							Projekte <span>&#128571;</span>
+						</a>
+						<div class="dropdown-menu">
+							<a
+								class="dropdown-item"
+								href="https://leo848.github.io/draw"
+								target="_blank"
+								>Malprogramm &#128396;</a
+							>
+							<a
+								class="dropdown-item"
+								href="https://leo848.github.io/binary-clock"
+								#
+								target="_blank"
+								>Bin&auml;ruhr &#8986;</a
+							>
+							<a
+								class="dropdown-item"
+								href="https://leo848.github.io/website/randomtext.html"
+								target="_blank"
+								>Zuf&auml;lliger Text &#9997;</a
+							>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<ul class="breadcrumb">
+			<li class="breadcrumb-item"><a href="../..">Startseite</a></li>
+			<li class="breadcrumb-item"><a href="..">Tutorials</a></li>
+			<li class="breadcrumb-item"><a href="/">2020-06</a></li>
+			<li class="breadcrumb-item active">Turtle in Python f&u...</li>
+		</ul>
 
-        <div class="container">
-            <img
-                src="../../../assets/img/turtle.png"
-                alt="Eine Wasserschildkröte mit einer weißen Überschrift 'turtle' und einem Python-Logo in der unteren rechten Ecke."
-            />
-            <h2>Turtle in Python f&uuml;r Anf&auml;nger</h2>
-            <span class="badge badge-pill badge-primary">turtle</span>
-            <span class="badge badge-pill badge-danger">Python</span>
-            <span class="badge badge-pill badge-warning">Anfänger</span>
-            <p>
-                Turtle ist in einer funktionierenden Python-Installation bereits
-                enthalten. Du musst es also nicht so wie PyInstaller erst mit
-                pip installieren. Um es zu importieren, musst du einfach
-                <code>import turtle</code> schreiben. Oder du importierst
-                einfach alle Inhalte des Moduls, ohne jedes Mal
-                <code>turtle.</code> davor schreiben zu müssen. Das kannst du so
-                tun:
-            </p>
-            <script src="https://gist.github.com/leo848/eb6c313d678cda4878b4f1b74067d500.js"></script>
-            <p>
-                Wir werden nun eine Variable namens <code>t</code> erstellen,
-                der wir den Wert einer Turtle zuweisen. Diese wird die Aufgaben
-                erfüllen, die wir in diesem Tutorial machen.
-            </p>
-            <script src="https://gist.github.com/leo848/ef3f76dba35af7c98422c31e8ca40029.js"></script>
-            <p>
-                Wenn du diesen Code ausführst, wirst du sehen, dass sich für
-                kurze Zeit ein Fenster öffnet und danach direkt wieder schließt.
-                Es handelt sich hierbei um ein <code>tkinter</code>-Fenster. Wir
-                wollen es aber einmal behalten. Dies können wird folgendermaßen
-                machen:
-            </p>
-            <script src="https://gist.github.com/leo848/5bde10bf4e5f608d142d58efae84d0a9.js"></script>
-            <p>
-                Wenn du <code>turtle</code> nicht mit <code>*</code> importiert
-                hast, musst du <code>turtle.mainloop()</code> schreiben. Die
-                mainloop-Funktion stammt aus tkinter und sorgt dafür, dass das
-                Fenster bestehen bleibt. Wichtig ist, dass du diese Funktion
-                immer nur ganz am Schluss verwendest, sonst könnte es zu
-                größeren Problemen kommen. Das sich geöffnete Fenster sollte
-                ungefähr so aussehen:
-            </p>
-            <img
-                src="../../assets/img/TurtleWindowEmpty.png"
-                alt="Ein leeres Turtle-Fenster."
-                class="w-50"
-            />
-            <p>
-                Die wichtigste Funktion in <code>turtle</code> ist
-                <code>turtle.forward</code> oder <code>turtle.fd</code>. Es gibt
-                ein positionelles Argument <code>distance</code>, welches die
-                Distanz in Pixeln angibt, mit der sich die Turtle fortbewegt.
-                Die Turtle wird sich dabei animativ bewegen, das heißt, dass es
-                eine Animation zwischen dem Anfang und dem Ende geben wird. Dies
-                hier ist ein Beispielcode:
-            </p>
-            <script src="https://gist.github.com/leo848/e39a322c5de90f705a00653304ddc3dd.js"></script>
-            <p>So sollte es aussehen:</p>
-            <img
-                src="../../assets/img/TurtleForwards.png"
-                alt="Ein Turtle-Fenster, in dem die Turtle bereits 200 Pixel nach recht gegangen ist"
-                class="w-50"
-            />
-            <p>
-                Du kannst diesen Befehl mehrmals in Folge verwenden, damit sich
-                die Turtle nacheinander so bewegt. Aber dies macht ohne Rotation
-                nicht viel Sinn. Deshalb gibt es die Funktionen <code>turtle.left()</code> und <code>turtle.right()</code>.
-            </p>
-            <br /><a
-                href=".."
-                class="btn btn-primary btn-lg active"
-                role="button"
-                aria-pressed="true"
-                no-link
-                >Zur&uuml;ck zur &Uuml;bersicht</a
-            >
-        </div>
+		<div class="container">
+			<img
+				src="../../../assets/img/turtle.png"
+				alt="Eine Wasserschildkröte mit einer weißen Überschrift 'turtle' und einem Python-Logo in der unteren rechten Ecke."
+			/>
+			<h2>Turtle in Python f&uuml;r Anf&auml;nger</h2>
+			<span class="badge badge-pill badge-primary">turtle</span>
+			<span class="badge badge-pill badge-danger">Python</span>
+			<span class="badge badge-pill badge-warning">Anfänger</span>
+			<p>
+				Turtle ist in einer funktionierenden Python-Installation bereits
+				enthalten. Du musst es also nicht so wie PyInstaller erst mit
+				pip installieren. Um es zu importieren, musst du einfach
+				<code>import turtle</code> schreiben. Oder du importierst
+				einfach alle Inhalte des Moduls, ohne jedes Mal
+				<code>turtle.</code> davor schreiben zu müssen. Das kannst du so
+				tun:
+			</p>
+			<script src="https://gist.github.com/leo848/eb6c313d678cda4878b4f1b74067d500.js"></script>
+			<p>
+				Wir werden nun eine Variable namens <code>t</code> erstellen,
+				der wir den Wert einer Turtle zuweisen. Diese wird die Aufgaben
+				erfüllen, die wir in diesem Tutorial machen.
+			</p>
+			<script src="https://gist.github.com/leo848/ef3f76dba35af7c98422c31e8ca40029.js"></script>
+			<p>
+				Wenn du diesen Code ausführst, wirst du sehen, dass sich für
+				kurze Zeit ein Fenster öffnet und danach direkt wieder schließt.
+				Es handelt sich hierbei um ein <code>tkinter</code>-Fenster. Wir
+				wollen es aber einmal behalten. Dies können wird folgendermaßen
+				machen:
+			</p>
+			<script src="https://gist.github.com/leo848/5bde10bf4e5f608d142d58efae84d0a9.js"></script>
+			<p>
+				Wenn du <code>turtle</code> nicht mit <code>*</code> importiert
+				hast, musst du <code>turtle.mainloop()</code> schreiben. Die
+				mainloop-Funktion stammt aus tkinter und sorgt dafür, dass das
+				Fenster bestehen bleibt. Wichtig ist, dass du diese Funktion
+				immer nur ganz am Schluss verwendest, sonst könnte es zu
+				größeren Problemen kommen. Das sich geöffnete Fenster sollte
+				ungefähr so aussehen:
+			</p>
+			<img
+				src="../../assets/img/TurtleWindowEmpty.png"
+				alt="Ein leeres Turtle-Fenster."
+				class="w-50"
+			/>
+			<p>
+				Die wichtigste Funktion in <code>turtle</code> ist
+				<code>turtle.forward</code> oder <code>turtle.fd</code>. Es gibt
+				ein positionelles Argument <code>distance</code>, welches die
+				Distanz in Pixeln angibt, mit der sich die Turtle fortbewegt.
+				Die Turtle wird sich dabei animativ bewegen, das heißt, dass es
+				eine Animation zwischen dem Anfang und dem Ende geben wird. Dies
+				hier ist ein Beispielcode:
+			</p>
+			<script src="https://gist.github.com/leo848/e39a322c5de90f705a00653304ddc3dd.js"></script>
+			<p>So sollte es aussehen:</p>
+			<img
+				src="../../assets/img/TurtleForwards.png"
+				alt="Ein Turtle-Fenster, in dem die Turtle bereits 200 Pixel nach recht gegangen ist"
+				class="w-50"
+			/>
+			<p>
+				Du kannst diesen Befehl mehrmals in Folge verwenden, damit sich
+				die Turtle nacheinander so bewegt. Aber dies macht ohne Rotation
+				nicht viel Sinn. Deshalb gibt es die Funktionen
+				<code>turtle.left()</code> und <code>turtle.right()</code>.
+			</p>
+			<br /><a
+				href=".."
+				class="btn btn-primary btn-lg active"
+				role="button"
+				aria-pressed="true"
+				no-link
+				>Zur&uuml;ck zur &Uuml;bersicht</a
+			>
+		</div>
 
-        <footer>
-            <div class="copyright">
-                <p>
-                    &copy 2020 -
-                    <a href="https://leo848.github.io">Leo Blume</a
-                    ><a href="https://leo848.github.io/impressum">
-                        | Impressum</a
-                    >
-                </p>
-            </div>
-            <div class="social">
-                <a href="https://leo848.github.io/kontakt" class="support"
-                    >Kontakt</a
-                >
-                <a
-                    href="https://discord.gg/TDr2mrj"
-                    target="_blank"
-                    class="discord"
-                    ><i class="fab fa-discord"></i
-                ></a>
-                <a href="mailto:leoblume@gmx.de" class="tweet"
-                    ><i class="fas fa-envelope"></i
-                ></a>
-                <a
-                    href="https://www.github.com/leo848/leo848.github.io"
-                    class="linked"
-                    ><i class="fas fa-code"></i
-                ></a>
-            </div>
-        </footer>
-        <button onclick="topFunction()" id="myBtn" title="Go to top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-    </body>
+		<footer>
+			<div class="copyright">
+				<p>
+					&copy 2020 -
+					<a href="https://leo848.github.io">Leo Blume</a
+					><a href="https://leo848.github.io/impressum">
+						| Impressum</a
+					>
+				</p>
+			</div>
+			<div class="social">
+				<a href="https://leo848.github.io/kontakt" class="support"
+					>Kontakt</a
+				>
+				<a
+					href="https://discord.gg/TDr2mrj"
+					target="_blank"
+					class="discord"
+					><i class="fab fa-discord"></i
+				></a>
+				<a href="mailto:leoblume@gmx.de" class="tweet"
+					><i class="fas fa-envelope"></i
+				></a>
+				<a
+					href="https://www.github.com/leo848/leo848.github.io"
+					class="linked"
+					><i class="fas fa-code"></i
+				></a>
+			</div>
+		</footer>
+		<button onclick="topFunction()" id="myBtn" title="Go to top">
+			<i class="fas fa-arrow-up"></i>
+		</button>
+	</body>
 </html>
