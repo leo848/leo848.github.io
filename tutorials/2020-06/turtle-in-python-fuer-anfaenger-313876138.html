@@ -231,12 +231,51 @@
 				<code>turtle</code> arbeitest. So sollte es am Ende aussehen:
 			</p>
 			<img
-				src="../../assets/img/TurtleQuadrat.png"
+				src="../../assets/img/TurtleQuadPrat.png"
 				alt="Aufgabe: Schreibe den Code, um dieses Quadrat im Turtle-Fenster anzuzeigen."
 				class="w-50"
 			/>
 			<p>Und das ist die Lösung:</p>
 			<script src="https://gist.github.com/leo848/3c9527d5a3c69262b63b3d2127ce4f3f.js"></script>
+			<p>
+				Mit Python-Schleifen, <code>turtle.left</code>,
+				<code>turtle.right</code> und <code>turtle.forward</code> kannst
+				du eigentlich so gut wie alles malen. Zum Beispiel diese
+				Funktion, die einen Stern malt, mit vier Argumenten:
+			</p>
+			<script src="https://gist.github.com/leo848/075967025a78c90dc74b3dd7aa8c02c8.js"></script>
+			<p>Testen wir diese Funktion ein paar Mal.</p>
+			<script src="https://gist.github.com/leo848/74cd96686eb92d7ecca100d0e8a4a3dc.js"></script>
+			<img
+				src="../../assets/img/TurtleStar1.png"
+				alt="star(40, 60, 170, 130)"
+				class="w-50"
+			/>
+			<script src="https://gist.github.com/leo848/c8a5b32d4bef5711a045cf1332210b62.js"></script>
+			<img
+				src="../../assets/img/TurtleStar2.png"
+				class="w-50"
+				alt="star(120, 38, 170, 220)"
+			/>
+			<script src="https://gist.github.com/leo848/111c3faa0dc88a8c5615ab3928c26240.js"></script>
+			<img
+				src="../../assets/img/TurtleStar3.png"
+				alt="star(100,100,100,175)"
+				class="w-50"
+			/>
+			<script src="https://gist.github.com/leo848/aacb638fbb73c60b8da8c086585564b3.js"></script>
+			<img
+				src="../../assets/img/TurtleStar4.png"
+				alt="star(50, 100, 30, 200)"
+				class="w-50"
+			/>
+			<p>
+				Wenn du diese Beispiele selbst testest, wird du merken, dass es
+				ziemlich lange dauert, bis ein Stern abgeschlossen ist. Um dies
+				zu verringern, verwende einfach die Funktion
+				<code>turtle.speed</code>. Am schnellsten ist 0 (ohne
+				Animation), am langsamsten 10.
+			</p>
 			<br /><a
 				href=".."
 				class="btn btn-primary btn-lg active"
