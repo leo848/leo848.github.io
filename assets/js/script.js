@@ -1,4 +1,10 @@
-const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
+const darkMode = window.matchMedia(
+	'(prefers-color-scheme: dark)',
+).matches;
+
+console.log(
+	'height ' + document.body.offsetHeight,
+);
 
 setInterval(function (){
 	let scroll = $(window).scrollTop(),

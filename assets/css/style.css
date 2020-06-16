@@ -1,8 +1,16 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic");
 @import url("https://fonts.googleapis.com/css?family=Fira+Code");
-html {
+html,
+body {
 	scroll-behavior: smooth;
 	font-variant-ligatures: normal !important;
+	transition: all 2s ease-in-out !important;
+}
+
+* {
+	transition-property: background-color, color;
+	transition-duration: 2s;
+	transition-timing-function: linear;
 }
 .navbar {
 	font-family: -apple-system, Poppins !important;
@@ -189,7 +197,6 @@ mono {
 	.logo {
 		width: 50% !important;
 	}
-
 	.w-50 {
 		width: 100% !important;
 	}
