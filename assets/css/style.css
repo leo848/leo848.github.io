@@ -234,3 +234,47 @@ mono {
 		width: 20%;
 	}
 }
+@media (prefers-color-scheme: dark) {
+	* {
+		color: white;
+		background-color: black;
+	}
+	body {
+		background-color: black;
+	}
+	.breadcrumb,
+	.breadcrumb-item {
+		background: #252627;
+	}
+	.nav-link,
+	.nav-link span,
+	.navbar-collapse {
+		background-color: #343840;
+	}
+	body .gist .gist-meta {
+		background-color: #343840;
+		color: white;
+	}
+	body .gist .gist-data {
+		color: white !important;
+	}
+	body .gist .gist-file .gist-meta a {
+		color: rgb(63, 184, 224) !important;
+	}
+	.jumbotron,
+	.jumbotron > * {
+		background-color: #252627;
+		color: white;
+	}
+	.carousel-indicators {
+		background-color: transparent;
+	}
+	.card .card-body,
+	.card .card-body > *,
+	.card .card-footer > * {
+		background-color: #252627;
+	}
+	.fas {
+		background-color: transparent;
+	}
+}

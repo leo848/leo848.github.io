@@ -79,11 +79,7 @@
 							>Home <span>&#127968;</span>
 						</a>
 					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="../../../news"
-							>News <span>&#128240;</span>
-						</a>
-					</li>
+
 					<li class="nav-item">
 						<a class="nav-link" href="../../../&Uuml;bermich"
 							>&Uuml;ber mich <span>&#128102;</span></a
@@ -150,7 +146,7 @@
 				src="../../../assets/img/turtle.png"
 				alt="Eine Wasserschildkröte mit einer weißen Überschrift 'turtle' und einem Python-Logo in der unteren rechten Ecke."
 			/>
-			<h2>Turtle in Python f&uuml;r Anf&auml;nger</h2>
+			<h1>Turtle in Python f&uuml;r Anf&auml;nger</h1>
 			<span class="badge badge-pill badge-primary">turtle</span>
 			<span class="badge badge-pill badge-danger">Python</span>
 			<span class="badge badge-pill badge-warning">Anfänger</span>
@@ -212,8 +208,35 @@
 				Du kannst diesen Befehl mehrmals in Folge verwenden, damit sich
 				die Turtle nacheinander so bewegt. Aber dies macht ohne Rotation
 				nicht viel Sinn. Deshalb gibt es die Funktionen
-				<code>turtle.left()</code> und <code>turtle.right()</code>.
+				<code>turtle.left(angle)</code> und
+				<code>turtle.right(angle)</code>. <code>angle</code> ist hier
+				der Parameter für die Anzahl der Drehung. Im Normalfall ist
+				dieser Wert in Grad (°) angegeben. Dies ist ein erstes Beispiel
+				mit diesen beiden Funktionen, in denen wir einen einfachen Pfeil
+				zeichnen:
 			</p>
+			<script src="https://gist.github.com/leo848/bfd748e8562ebab14835724463dd8980.js"></script>
+			<p>Und so sollte es am Ende aussehen:</p>
+			<img
+				src="../../assets/img/TurtlePfeil1.png"
+				alt="Die Turtle nach dem Zeichnen eines Pfeiles mithilfe von turtle.left und turtle.right."
+				class="w-50"
+			/>
+			<p>
+				Versuche nun einmal, ein Quadrat mit der Seitenlänge 200 zu
+				erstellen, mit den Kenntnissen, die du nun hast. Falls du das
+				Konzept von for-Loops / Scheifen beherrscht, versuche, diese zu
+				verwenden. Die bisher gelernten sind die wichtigsten drei
+				Funktionen, die du brauchst, wenn du mit
+				<code>turtle</code> arbeitest. So sollte es am Ende aussehen:
+			</p>
+			<img
+				src="../../assets/img/TurtleQuadrat.png"
+				alt="Aufgabe: Schreibe den Code, um dieses Quadrat im Turtle-Fenster anzuzeigen."
+				class="w-50"
+			/>
+			<p>Und das ist die Lösung:</p>
+			<script src="https://gist.github.com/leo848/3c9527d5a3c69262b63b3d2127ce4f3f.js"></script>
 			<br /><a
 				href=".."
 				class="btn btn-primary btn-lg active"

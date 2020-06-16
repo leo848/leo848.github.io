@@ -1,3 +1,5 @@
+const darkMode = window.matchMedia('(prefers-color-scheme: dark)');
+
 setInterval(function (){
 	let scroll = $(window).scrollTop(),
 		dh = $(document).height(),
@@ -106,14 +108,23 @@ $('.container img')
 			.append(
 				$('<i>')
 					.addClass('fa')
-					.addClass('fa-times')
+					.addClass('fa-times-circle')
 					.css({
-						zIndex   : '10001',
-						position : 'absolute',
-						right    : '20px',
-						top      : '10px',
-						fontSize : 50,
-						cursor   : 'pointer',
+						zIndex          : '10001',
+						position        :
+							'absolute',
+						right           : '20px',
+						top             : '10px',
+						fontSize        : 100,
+						cursor          :
+							'pointer',
+						color           :
+							'RGBA(255,255,255,0.5)',
+						borderRadius    : '50%',
+						border          :
+							'0px solid transparent',
+						backgroundColor :
+							'RGBA(0,0,0,0.5)',
 					}),
 			)
 			.css({
