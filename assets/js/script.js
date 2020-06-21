@@ -2,10 +2,6 @@ const darkMode = window.matchMedia(
 	'(prefers-color-scheme: dark)',
 ).matches;
 
-console.log(
-	'height ' + document.body.offsetHeight,
-);
-
 setInterval(function (){
 	let scroll = $(window).scrollTop(),
 		dh = $(document).height(),
@@ -24,6 +20,9 @@ mybutton = document.getElementById('myBtn');
 window.onscroll = function (){
 	scrollFunction();
 };
+
+const HEIGHT = document.body.offsetHeight;
+console.log(new Date(), 'HEIGHT:', HEIGHT);
 
 function scrollFunction (){
 	if (

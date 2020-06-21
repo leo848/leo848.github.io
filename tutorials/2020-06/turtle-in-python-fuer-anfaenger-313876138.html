@@ -291,7 +291,44 @@
 			/>
 			<p>
 				Du kannst auch <code>turtle.showturtle()</code> verwenden, um
-				die Turtle wieder zu zeigen.
+				die Turtle wieder zu zeigen, aber dies wird eher weniger
+				verwendet.
+			</p>
+			<p>
+				Durch <code>t.goto((x, y))</code> gehst du mit der Turtle zu
+				einer absoluten Position. Falls du dich wunderst, warum ich eine
+				doppelte Klammer verwende: Es handelt sich hierbei um das
+				Python-Datensatz <code>tuple</code>. Allerdings wird die Turtle
+				weiterhin eine Linie von ihrem bisherigen Standort zeichnen. Um
+				dies zu verhindern, kannst du <code>t.penup()</code> und
+				<code>t.pendown()</code> verwenden.
+			</p>
+			<p>
+				Eine weitere sehr wichtige Funktion ist
+				<code>t.begin_fill()</code> und <code>t.end_fill()</code>. Mit
+				ihnen kann man Dinge ausfüllen. Schreibe einfach
+				<code>t.begin_fill()</code> am Anfang deines Turtle-Codeblocks
+				und <code>t.end_fill()</code> am Ende davon.
+			</p>
+			<script src="https://gist.github.com/leo848/96257b531dc17a32b30171254f0c7970.js"></script>
+			<img
+				src="../../assets/img/TurtleFill.png"
+				alt="t.begin_fill() und t.end_fill(), um ein Oktagon zu zeichnen."
+				class="w-50"
+			/>
+			<p>
+				Wie du sicher bemerkt hast, haben wir bisher nur in Schwarz
+				gearbeitet. <br />
+				Aber natürlich kann man in Turtle auch mit anderen Farben
+				arbeiten. Dafür kannst du <code>t.color()</code> verwenden. Es
+				gibt viele verschiedene Möglichkeiten, diese Funktion zu
+				verwenden. Verwendest du sie beispielsweise ohne Argumente, gibt
+				sie die aktuellen Farbenwerte wieder. Interessanter ist es aber
+				mit einem oder zwei Argumenten. Du kannst einen Colorstring (wie
+				<code>"#c6ff00</code>) sowie ein RGB-Tuple (wie
+				<code>(173, 20, 87)</code>) verwenden. Das erste Argument ist
+				die Farbe des normalen Striches, das zweite die von der Füllung
+				mit <code>t.begin_fill()</code> und <code>t.end_fill()</code>.
 			</p>
 			<br /><a
 				href=".."

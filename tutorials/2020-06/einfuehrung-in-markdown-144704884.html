@@ -1,179 +1,182 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <title>Einf&uuml;hrung in Markdown | leo848.github.io</title>
-        <meta
-            name="description"
-            content="Markdown (.md) ist eine Auszeichnungssprache, die unter anderem von GitHub f&uuml;r die Beschreibungen der Projekte genutzt wird. In diesem Tutorial lernst du die Basics dieser Sprache."
-        />
-        <meta
-            name="google-site-verification"
-            content="w7c1Sr16VtH5GbJ_rKbexyTbWvg9Nix5RaAbENyK8j8"
-        />
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="../../../assets/css/style.css" />
-        <link rel="stylesheet" href="../../../assets/css/footer.css" />
-        <script src="../../../assets/js/script.js" defer></script>
-        <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-            crossorigin="anonymous"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/mousetrap@1.6.5/mousetrap.min.js"></script>
-        <script
-            data-ad-client="ca-pub-8678326294748904"
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="../../../assets/icons/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="../../../assets/icons/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="../../../assets/icons/favicon-16x16.png"
-        />
-        <link rel="manifest" href="../../../assets/web/site.webmanifest" />
-        <script
-            data-ad-client="ca-pub-8678326294748904"
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-    </head>
-    <body>
-        <div id="progressbar"></div>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-            <a class="navbar-brand" href="#">Leo Blume</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapsibleNavbar"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../.."
-                            >Home <span>&#127968;</span>
-                        </a>
-                    </li>
+	<head>
+		<title>Einf&uuml;hrung in Markdown | leo848.github.io</title>
+		<meta
+			name="description"
+			content="Markdown (.md) ist eine Auszeichnungssprache, die unter anderem von GitHub f&uuml;r die Beschreibungen der Projekte genutzt wird. In diesem Tutorial lernst du die Basics dieser Sprache."
+		/>
+		<meta
+			name="google-site-verification"
+			content="w7c1Sr16VtH5GbJ_rKbexyTbWvg9Nix5RaAbENyK8j8"
+		/>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../../../assets/css/style.css" />
+		<link rel="stylesheet" href="../../../assets/css/footer.css" />
+		<script src="../../../assets/js/script.js" defer></script>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+			integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+			crossorigin="anonymous"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/mousetrap@1.6.5/mousetrap.min.js"></script>
+		<script
+			data-ad-client="ca-pub-8678326294748904"
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+		></script>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../../assets/icons/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../../assets/icons/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../../assets/icons/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../../../assets/web/site.webmanifest" />
+		<script
+			data-ad-client="ca-pub-8678326294748904"
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+		></script>
+	</head>
+	<body>
+		<div id="progressbar"></div>
+		<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+			<a class="navbar-brand" href="#">Leo Blume</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#collapsibleNavbar"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="../../.."
+							>Home <span>&#127968;</span>
+						</a>
+					</li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../&Uuml;bermich"
-                            >&Uuml;ber mich <span>&#128102;</span></a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../informatik"
-                            >Informatik <span>&#128187;</span></a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../kontakt"
-                            >Kontakt <span>&#128233;</span></a
-                        >
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../../../tutorials"
-                            >Tutorials <span>&#127891;</span></a
-                        >
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="navbardrop"
-                            data-toggle="dropdown"
-                        >
-                            Projekte <span>&#128571;</span>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a
-                                class="dropdown-item"
-                                href="https://leo848.github.io/draw"
-                                target="_blank"
-                                >Malprogramm &#128396;</a
-                            >
-                            <a
-                                class="dropdown-item"
-                                href="https://leo848.github.io/binary-clock"
-                                #
-                                target="_blank"
-                                >Bin&auml;ruhr &#8986;</a
-                            >
-                            <a
-                                class="dropdown-item"
-                                href="https://leo848.github.io/website/randomtext.html"
-                                target="_blank"
-                                >Zuf&auml;lliger Text &#9997;</a
-                            >
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../..">Startseite</a></li>
-            <li class="breadcrumb-item"><a href="..">Tutorials</a></li>
-            <li class="breadcrumb-item"><a href="/">2020-06</a></li>
-            <li class="breadcrumb-item active">Einf&uuml;hrung in Markd...</li>
-        </ul>
+					<li class="nav-item">
+						<a class="nav-link" href="../../../&Uuml;bermich"
+							>&Uuml;ber mich <span>&#128102;</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../../informatik"
+							>Informatik <span>&#128187;</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../../kontakt"
+							>Kontakt <span>&#128233;</span></a
+						>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="../../../tutorials"
+							>Tutorials <span>&#127891;</span></a
+						>
+					</li>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbardrop"
+							data-toggle="dropdown"
+						>
+							Projekte <span>&#128571;</span>
+						</a>
+						<div class="dropdown-menu">
+							<a
+								class="dropdown-item"
+								href="https://leo848.github.io/draw"
+								target="_blank"
+								>Malprogramm &#128396;</a
+							>
+							<a
+								class="dropdown-item"
+								href="https://leo848.github.io/binary-clock"
+								#
+								target="_blank"
+								>Bin&auml;ruhr &#8986;</a
+							>
+							<a
+								class="dropdown-item"
+								href="https://leo848.github.io/website/randomtext.html"
+								target="_blank"
+								>Zuf&auml;lliger Text &#9997;</a
+							>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<ul class="breadcrumb">
+			<li class="breadcrumb-item"><a href="../..">Startseite</a></li>
+			<li class="breadcrumb-item"><a href="..">Tutorials</a></li>
+			<li class="breadcrumb-item"><a href="/">2020-06</a></li>
+			<li class="breadcrumb-item active">Einf&uuml;hrung in Markd...</li>
+		</ul>
 
-        <div class="container">
-            <img
-                src="../../../assets/img/MarkdownLogo.png"
-                alt="Das Logo der Auszeichnungssprache Markdown"
-                w-25
-            />
-            <h1>Einf&uuml;hrung in Markdown</h1>
-            <span class="badge badge-pill badge-primary">Markdown</span>
-            <span class="badge badge-pill badge-danger">GitHub</span>
-            <span class="badge badge-pill badge-warning"
-                >Auszeichnungssprache</span
-            >
-            <br />
-            <h4>Was ist Markdown?</h4>
-            <p>
-                Markdown ist die nach HTML zweithäufigst genutzte
-                Auszeichnungssprache der Welt. Sie wird unter anderem von
-                <a href="http://github.com">GitHub</a>,
-                <a href="http://reddit.com">Reddit</a> und
-                <a href="http://discord.com">Discord</a> verwendet. Dies liegt
-                vor allem an der einfachen Handhabung. Wenn du schon einmal auf
-                GitHub unterwegs warst, hast du wahrscheinlich auch schon einmal
-                diesen Dateinamen hier gesehen: <br /><code>README.md</code
-                ><br />Die README.md-Datei in einem GitHub-Repo ist die lange
-                Beschreibung. Sie erklärt, wofür das Projekt gut ist, wie man es
-                verwendet, etc. Und sie muss in Markdown geschrieben werden!
-            </p>
-            <h4>Wie wird Markdown gerendert?</h4>
-            <p>
-                Markdown wird von einem sogenannten <i>Preprocessor</i> zu HTML
-                umgeschrieben, welches dann im Browser auch so angezeigt werden
-                kann.
-            </p>
-            <h4>Die Markdown-Syntax</h4>
-            <pre>
+		<div class="container">
+			<img
+				src="../../../assets/img/MarkdownLogo.png"
+				alt="Das Logo der Auszeichnungssprache Markdown"
+				w-25
+			/>
+			<h1>Einf&uuml;hrung in Markdown</h1>
+			<span class="badge badge-pill badge-primary">Markdown</span>
+			<span class="badge badge-pill badge-danger">GitHub</span>
+			<span class="badge badge-pill badge-warning"
+				>Auszeichnungssprache</span
+			>
+			<br />
+			<h4>Was ist Markdown?</h4>
+			<p>
+				Markdown ist die nach HTML zweithäufigst genutzte
+				Auszeichnungssprache der Welt. Sie wird unter anderem von
+				<a href="http://github.com">GitHub</a>,
+				<a href="http://discord.com">Discord</a>
+				<a href="http://reddit.com">Reddit</a>,
+				<a href="http://stackoverflow.com">StackOverflow</a> und
+				<a href="https://codepen.io">codepen.io</a> verwendet. Dies
+				liegt vor allem an der einfachen Handhabung. Wenn du schon
+				einmal auf GitHub unterwegs warst, hast du wahrscheinlich auch
+				schon einmal diesen Dateinamen hier gesehen: <br /><code
+					>README.md</code
+				><br />Die README.md-Datei in einem GitHub-Repo ist die lange
+				Beschreibung. Sie erklärt, wofür das Projekt gut ist, wie man es
+				verwendet, etc. Und sie muss in Markdown geschrieben werden!
+			</p>
+			<h4>Wie wird Markdown gerendert?</h4>
+			<p>
+				Markdown wird von einem sogenannten <i>Preprocessor</i> zu HTML
+				umgeschrieben, welches dann im Browser auch so angezeigt werden
+				kann.
+			</p>
+			<h4>Die Markdown-Syntax</h4>
+			<pre>
 ## Überschriften in Markdown
 # h1
 ## h2
@@ -188,8 +191,8 @@ h1 und h2 kann man auch in dieser alternativen Art darstellen:
 Überschrift 2
 -------------
             </pre>
-            <script src="https://gist.github.com/leo848/83a756b59f44aae3418cb3b63a23b6d7.js"></script>
-            <pre>
+			<script src="https://gist.github.com/leo848/83a756b59f44aae3418cb3b63a23b6d7.js"></script>
+			<pre>
 ## Betonung
 
 Man kann Text mit *Asterisken* oder _Unterstrichen_ kursiv darstellen.
@@ -198,8 +201,8 @@ Wenn du **doppelte Asterisken und _einfache Unterstriche_** verwendest, ist der 
 Für durchgestrichenen Text verwende ~~zwei Tilden~~ (auf der Tastatur AltGr + +)
 Oder kombiniere **_~~alles~~_**.
             </pre>
-            <script src="https://gist.github.com/leo848/f0589d09449c41652916462025bd49be.js"></script>
-            <pre>
+			<script src="https://gist.github.com/leo848/f0589d09449c41652916462025bd49be.js"></script>
+			<pre>
 ## Listen
 1. Erster Punkt einer geordneten Liste
 2. Ein anderer Punkt
@@ -218,8 +221,8 @@ Oder kombiniere **_~~alles~~_**.
 - Oder Minuszeichen
 + Oder Pluszeichen
             </pre>
-            <script src="https://gist.github.com/leo848/8f57d47bb74f76553c586fb7d57ecb52.js"></script>
-            <pre>
+			<script src="https://gist.github.com/leo848/8f57d47bb74f76553c586fb7d57ecb52.js"></script>
+			<pre>
 ## Links
 [Das hier ist ein Inline-Link](https://www.leo848.github.io)
 
@@ -243,8 +246,8 @@ Etwas Text, der beweist, dass die Referenzlinks überall kommen können
 [1]: http://example.com
 [linktext selbst]: http://www.reddit.com
             </pre>
-            <script src="https://gist.github.com/leo848/fd6deec90eee7f5c98458d3031419bb5.js"></script>
-            <pre>
+			<script src="https://gist.github.com/leo848/fd6deec90eee7f5c98458d3031419bb5.js"></script>
+			<pre>
 ## Bilder
 
 Mein Logo (hovere darüber, um den Titeltext sehen zu können):
@@ -256,8 +259,8 @@ Mit Referenz:
 
 [logo]: https://leo848.github.io/assets/icons/android-chrome-192x192.png "Titel Logo 2"
             </pre>
-            <script src="https://gist.github.com/leo848/6b55a6f9ca39dc1411d52f56406815bd.js"></script>
-            <pre>
+			<script src="https://gist.github.com/leo848/6b55a6f9ca39dc1411d52f56406815bd.js"></script>
+			<pre>
 ## Code- und Syntaxhervorhebung
 Codeblöcke gehören zu Markdown, aber Syntaxhervorhebung standardmäßig nicht. In Github-favorisiertem Markdown allerdings schon.
 Inline-Codeblöcke kannst du so darstellen:
@@ -279,8 +282,8 @@ function addContent(string){ // füge neuen Inhalt hinzu
 print("Milch", "Brot", "Wasser", "Honig", sep=", ") # erinnerst du dich?
 ```
             </pre>
-            <script src="https://gist.github.com/leo848/4f5cde3ee9be60d969cd5ca24a002571.js"></script>
-            <pre>
+			<script src="https://gist.github.com/leo848/4f5cde3ee9be60d969cd5ca24a002571.js"></script>
+			<pre>
 ## Blockquoten
 > Blockquoten eignen sich sehr gut für Zitate oder Antworten bei Emails.
 > Diese Zeile gehört zur gleichen Blockquote.
@@ -290,8 +293,8 @@ Ende der Blockquote.
 > Du kannst auch *inline* **Markdown** innerhalb von `Blockquoten` verwenden.
             </pre>
 
-            <script src="https://gist.github.com/leo848/73f05d30793eb6c4178240293f855c6b.js"></script>
-            <pre>
+			<script src="https://gist.github.com/leo848/73f05d30793eb6c4178240293f855c6b.js"></script>
+			<pre>
 ## Horizontale Linien
 Drei oder mehr...
 
@@ -307,49 +310,49 @@ ___
 
 Unterstriche
             </pre>
-            <script src="https://gist.github.com/leo848/7205c47225a6ac478cd13dedabe382ed.js"></script>
-            <a
-                href=".."
-                class="btn btn-primary btn-lg active"
-                role="button"
-                aria-pressed="true"
-                no-link
-                >Zur&uuml;ck zur &Uuml;bersicht</a
-            >
-        </div>
+			<script src="https://gist.github.com/leo848/7205c47225a6ac478cd13dedabe382ed.js"></script>
+			<a
+				href=".."
+				class="btn btn-primary btn-lg active"
+				role="button"
+				aria-pressed="true"
+				no-link
+				>Zur&uuml;ck zur &Uuml;bersicht</a
+			>
+		</div>
 
-        <footer>
-            <div class="copyright">
-                <p>
-                    &copy 2020 -
-                    <a href="https://leo848.github.io">Leo Blume</a
-                    ><a href="https://leo848.github.io/impressum">
-                        | Impressum</a
-                    >
-                </p>
-            </div>
-            <div class="social">
-                <a href="https://leo848.github.io/kontakt" class="support"
-                    >Kontakt</a
-                >
-                <a
-                    href="https://discord.gg/TDr2mrj"
-                    target="_blank"
-                    class="discord"
-                    ><i class="fab fa-discord"></i
-                ></a>
-                <a href="mailto:leoblume@gmx.de" class="tweet"
-                    ><i class="fas fa-envelope"></i
-                ></a>
-                <a
-                    href="https://www.github.com/leo848/leo848.github.io"
-                    class="linked"
-                    ><i class="fas fa-code"></i
-                ></a>
-            </div>
-        </footer>
-        <button onclick="topFunction()" id="myBtn" title="Go to top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-    </body>
+		<footer>
+			<div class="copyright">
+				<p>
+					&copy 2020 -
+					<a href="https://leo848.github.io">Leo Blume</a
+					><a href="https://leo848.github.io/impressum">
+						| Impressum</a
+					>
+				</p>
+			</div>
+			<div class="social">
+				<a href="https://leo848.github.io/kontakt" class="support"
+					>Kontakt</a
+				>
+				<a
+					href="https://discord.gg/TDr2mrj"
+					target="_blank"
+					class="discord"
+					><i class="fab fa-discord"></i
+				></a>
+				<a href="mailto:leoblume@gmx.de" class="tweet"
+					><i class="fas fa-envelope"></i
+				></a>
+				<a
+					href="https://www.github.com/leo848/leo848.github.io"
+					class="linked"
+					><i class="fas fa-code"></i
+				></a>
+			</div>
+		</footer>
+		<button onclick="topFunction()" id="myBtn" title="Go to top">
+			<i class="fas fa-arrow-up"></i>
+		</button>
+	</body>
 </html>
