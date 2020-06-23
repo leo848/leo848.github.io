@@ -9,7 +9,7 @@ setInterval(function (){
 		scrollPercent = scroll / (dh - wh) * 100;
 	$('#progressbar').css(
 		'height',
-		`calc(${scrollPercent + 1}% - 55px)`,
+		`calc(${scrollPercent + 1}`,
 	);
 	$('#progressbar').css('top', `55px`);
 });
