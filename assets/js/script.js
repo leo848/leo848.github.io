@@ -2,6 +2,14 @@ const darkMode = window.matchMedia(
 	'(prefers-color-scheme: dark)',
 ).matches;
 
+try {
+	var bricklayer = new Bricklayer(
+		document.querySelector('.bricklayer'),
+	);
+} catch (error) {
+	// pass
+}
+
 setInterval(function (){
 	let scroll = $(window).scrollTop(),
 		dh = $(document).height(),
@@ -165,8 +173,4 @@ $('.container a').attr('target', '_blank');
 $('.container a[no-blank], .btn').attr(
 	'target',
 	'_self',
-);
-
-var bricklayer = new Bricklayer(
-	document.querySelector('.bricklayer'),
 );
