@@ -286,3 +286,7 @@ mono {
 		background-color: transparent;
 	}
 }
+ins {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
