@@ -1,355 +1,358 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <title>
-            Das print-Statement in Python im Detail | leo848.github.io
-        </title>
-        <meta
-            name="google-site-verification"
-            content="w7c1Sr16VtH5GbJ_rKbexyTbWvg9Nix5RaAbENyK8j8"
-        />
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="../../../assets/css/style.css" />
-        <link rel="stylesheet" href="../../../assets/css/footer.css" />
-        <script src="../../../assets/js/script.js" defer></script>
-        <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-            crossorigin="anonymous"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/mousetrap@1.6.5/mousetrap.min.js"></script>
-        <script
-            data-ad-client="ca-pub-8678326294748904"
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="../../../assets/icons/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="../../../assets/icons/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="../../../assets/icons/favicon-16x16.png"
-        />
-        <link rel="manifest" href="../../../assets/web/site.webmanifest" />
-    </head>
-    <body>
-        <div id="progressbar"></div>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-            <a class="navbar-brand" href="#">Leo Blume</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapsibleNavbar"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../.."
-                            >Home <span>&#127968;</span>
-                        </a>
-                    </li>
+	<head>
+		<title>
+			Das print-Statement in Python im Detail | leo848.github.io
+		</title>
+		<meta
+			name="google-site-verification"
+			content="w7c1Sr16VtH5GbJ_rKbexyTbWvg9Nix5RaAbENyK8j8"
+		/>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../../assets/css/style.css" />
+		<link rel="stylesheet" href="../../assets/css/footer.css" />
+		<script src="../../assets/js/script.js" defer></script>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+			integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+			crossorigin="anonymous"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/mousetrap@1.6.5/mousetrap.min.js"></script>
+		<script
+			data-ad-client="ca-pub-8678326294748904"
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+		></script>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../assets/icons/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../assets/icons/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../assets/icons/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../../assets/web/site.webmanifest" />
+	</head>
+	<body>
+		<div id="progressbar"></div>
+		<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+			<a class="navbar-brand" href="#">Leo Blume</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#collapsibleNavbar"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="../../.."
+							>Home <span>&#127968;</span>
+						</a>
+					</li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../&Uuml;bermich"
-                            >&Uuml;ber mich <span>&#128102;</span></a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../informatik"
-                            >Informatik <span>&#128187;</span></a
-                        >
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../../../kontakt"
-                            >Kontakt <span>&#128233;</span></a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../tutorials"
-                            >Tutorials <span>&#127891;</span></a
-                        >
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="navbardrop"
-                            data-toggle="dropdown"
-                        >
-                            Projekte <span>&#128571;</span>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a
-                                class="dropdown-item"
-                                href="https://leo848.github.io/draw"
-                                target="_blank"
-                                >Malprogramm &#128396;</a
-                            >
-                            <a
-                                class="dropdown-item"
-                                href="https://leo848.github.io/binary-clock"
-                                #
-                                target="_blank"
-                                >Bin&auml;ruhr &#8986;</a
-                            >
-                            <a
-                                class="dropdown-item"
-                                href="https://leo848.github.io/website/randomtext.html"
-                                target="_blank"
-                                >Zuf&auml;lliger Text &#9997;</a
-                            >
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="../..">Startseite</a>
-            </li>
-            <li class="breadcrumb-item">
-                <a href="..">Tutorials</a>
-            </li>
-            <li class="breadcrumb-item"><a href="/">2020-06</a></li>
-            <li class="breadcrumb-item active">Das print-Statement ...</li>
-        </ul>
+					<li class="nav-item">
+						<a class="nav-link" href="../../&uuml;bermich"
+							>&Uuml;ber mich <span>&#128102;</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../informatik"
+							>Informatik <span>&#128187;</span></a
+						>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="../../kontakt"
+							>Kontakt <span>&#128233;</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../tutorials"
+							>Tutorials <span>&#127891;</span></a
+						>
+					</li>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbardrop"
+							data-toggle="dropdown"
+						>
+							Projekte <span>&#128571;</span>
+						</a>
+						<div class="dropdown-menu">
+							<a
+								class="dropdown-item"
+								href="https://leo848.github.io/draw"
+								target="_blank"
+								>Malprogramm &#128396;</a
+							>
+							<a
+								class="dropdown-item"
+								href="https://leo848.github.io/binary-clock"
+								#
+								target="_blank"
+								>Bin&auml;ruhr &#8986;</a
+							>
+							<a
+								class="dropdown-item"
+								href="https://leo848.github.io/website/randomtext.html"
+								target="_blank"
+								>Zuf&auml;lliger Text &#9997;</a
+							>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<ul class="breadcrumb">
+			<li class="breadcrumb-item">
+				<a href="../..">Startseite</a>
+			</li>
+			<li class="breadcrumb-item">
+				<a href="..">Tutorials</a>
+			</li>
+			<li class="breadcrumb-item"><a href="/">2020-06</a></li>
+			<li class="breadcrumb-item active">Das print-Statement ...</li>
+		</ul>
 
-        <div class="container">
-            <img
-                src="../../../assets/img/PrintSignature.png"
-                alt="Die Signatur für das print-Statement in Python"
-            />
-            <h1>Das print-Statement in Python im Detail</h1>
-            <span class="badge badge-pill badge-primary">Python</span>
-            <span class="badge badge-pill badge-danger">print</span>
-            <span class="badge badge-pill badge-warning">Argumente</span>
-            <h4>1. Der Parameter <code>sep</code></h4>
-            <p>
-                Bestimmt kennst du in Python das print-Statement. Und bestimmt
-                hast du es auch einmal genutzt, um mehrere Dinge gleichzeitig
-                auszudrucken. So wie zum Beispiel hier:
-            </p>
-            <script src="https://gist.github.com/leo848/27097a42fe1920ab59227fd31309fead.js"></script>
-            <p>
-                Wie man sehen kann, wird jedes Element nacheinander gedruckt,
-                und zwischen jedem wird ein Leerzeichen gedruckt. Dies können
-                wir mit dem Argument <code>sep</code> ändern.<br />Als
-                Standardwert hat <code>sep</code> ein Leerzeichen. Wenn wir also
-                zu unserer Python-Funktion als Argument
-                <code>sep=" "</code> geben, sollte sich also nichts verändern,
-                oder?
-            </p>
-            <script src="https://gist.github.com/leo848/76891184033bf04674ba0650cff82003.js"></script>
-            <p>
-                Korrekt! Aber das war ja ziemlich langweilig. Was, wenn wir zum
-                Beispiel <code>sep="\n"</code> festlegen? (\n ist in Python das
-                Zeichen für einen Zeilenumbruch wie durch Drücken der
-                Enter-Taste)
-            </p>
-            <script src="https://gist.github.com/leo848/6118cbdd01eab9ed6ea85de67b1f4a4b.js"></script>
-            <p>
-                Wie erwartet. Jedes Element wird durch einen Zeilenumbruch
-                getrennt. <br />
-                Mit diesem Wissen kann man nun viele verschiedene Dinge machen.
-                Hier sind ein paar Beispiele:
-            </p>
-            <script src="https://gist.github.com/leo848/92e9fee2ef56b03ddb62d4126618d98c.js"></script>
-            <p>
-                Teste einmal, was du damit alles anstellen kannst!<br />Kleine
-                Aufgabe: Was musst du als Python-Script verwenden, damit die
-                Konsole in Python das folgende ausgibt (natürlich mit der Hilfe
-                des Keywords <code>sep</code>): <br /><code
-                    >Milch, Brot, Wasser, Honig</code
-                >
-            </p>
-            <h4>2. Der Parameter <code>end</code></h4>
-            <p>
-                Wenn du <code>sep</code> verstanden hast, ist
-                <code>end</code> eigentlich noch einfacher. Es beschreibt
-                einfach das, was am Ende des Strings beim Ausführen von print
-                angehängt wird. Jetzt fragst du dich vielleicht: <br />
-                "Warum sollte ich wollen, dass Python mir an meinen String etwas
-                anhängt? Ich will meinen String / meine Strings so drucken, wie
-                ich will!"<br />
-                Aber normalerweise möchtest du, dass Python etwas an deinen
-                String anhängt. Nämlich <code>\n</code>. Oder in seltenen Fällen
-                <code>\r\n</code>. Warum das so ist, wird gleich beim Argument
-                <code>flush</code> erklärt. Und falls du es einmal selbst testen
-                möchtest: Dieses Programm hier:
-            </p>
-            <script src="https://gist.github.com/leo848/61a6e8d027c9f92a6d84283baaf566f5.js"></script>
-            <p>
-                wird funktionieren wie erwartet (einfach
-                <code>Hallo Welt</code> ausgeben und dann beenden). Dieses
-                Programm hier allerdings:
-            </p>
-            <script src="https://gist.github.com/leo848/65b6636128fbf8139727d74ab47ff832.js"></script>
-            <p>
-                nicht. (Falls du es nicht selbst testen möchtest: Es gibt zuerst
-                <code>Hallo Welt!</code> aus, wartet dann 3 Sekunden und gibt
-                dann erst <code>Hallo zurück!</code> aus.)<br />Das liegt an
-                sogenannten <i>Buffern</i>. Diese werden gleich beim Argument
-                <code>flush</code> ein Thema sein.
-            </p>
+		<div class="container">
+			<img
+				src="../../assets/img/PrintSignature.png"
+				alt="Die Signatur für das print-Statement in Python"
+			/>
+			<h1>Das print-Statement in Python im Detail</h1>
+			<span class="badge badge-pill badge-primary">Python</span>
+			<span class="badge badge-pill badge-danger">print</span>
+			<span class="badge badge-pill badge-warning">Argumente</span>
+			<h4>1. Der Parameter <code>sep</code></h4>
+			<p>
+				Bestimmt kennst du in Python das print-Statement. Und bestimmt
+				hast du es auch einmal genutzt, um mehrere Dinge gleichzeitig
+				auszudrucken. So wie zum Beispiel hier:
+			</p>
+			<script src="https://gist.github.com/leo848/27097a42fe1920ab59227fd31309fead.js"></script>
+			<p>
+				Wie man sehen kann, wird jedes Element nacheinander gedruckt,
+				und zwischen jedem wird ein Leerzeichen gedruckt. Dies können
+				wir mit dem Argument <code>sep</code> ändern.<br />Als
+				Standardwert hat <code>sep</code> ein Leerzeichen. Wenn wir also
+				zu unserer Python-Funktion als Argument
+				<code>sep=" "</code> geben, sollte sich also nichts verändern,
+				oder?
+			</p>
+			<script src="https://gist.github.com/leo848/76891184033bf04674ba0650cff82003.js"></script>
+			<p>
+				Korrekt! Aber das war ja ziemlich langweilig. Was, wenn wir zum
+				Beispiel <code>sep="\n"</code> festlegen? (\n ist in Python das
+				Zeichen für einen Zeilenumbruch wie durch Drücken der
+				Enter-Taste)
+			</p>
+			<script src="https://gist.github.com/leo848/6118cbdd01eab9ed6ea85de67b1f4a4b.js"></script>
+			<p>
+				Wie erwartet. Jedes Element wird durch einen Zeilenumbruch
+				getrennt. <br />
+				Mit diesem Wissen kann man nun viele verschiedene Dinge machen.
+				Hier sind ein paar Beispiele:
+			</p>
+			<script src="https://gist.github.com/leo848/92e9fee2ef56b03ddb62d4126618d98c.js"></script>
+			<p>
+				Teste einmal, was du damit alles anstellen kannst!<br />Kleine
+				Aufgabe: Was musst du als Python-Script verwenden, damit die
+				Konsole in Python das folgende ausgibt (natürlich mit der Hilfe
+				des Keywords <code>sep</code>): <br /><code
+					>Milch, Brot, Wasser, Honig</code
+				>
+			</p>
+			<h4>2. Der Parameter <code>end</code></h4>
+			<p>
+				Wenn du <code>sep</code> verstanden hast, ist
+				<code>end</code> eigentlich noch einfacher. Es beschreibt
+				einfach das, was am Ende des Strings beim Ausführen von print
+				angehängt wird. Jetzt fragst du dich vielleicht: <br />
+				"Warum sollte ich wollen, dass Python mir an meinen String etwas
+				anhängt? Ich will meinen String / meine Strings so drucken, wie
+				ich will!"<br />
+				Aber normalerweise möchtest du, dass Python etwas an deinen
+				String anhängt. Nämlich <code>\n</code>. Oder in seltenen Fällen
+				<code>\r\n</code>. Warum das so ist, wird gleich beim Argument
+				<code>flush</code> erklärt. Und falls du es einmal selbst testen
+				möchtest: Dieses Programm hier:
+			</p>
+			<script src="https://gist.github.com/leo848/61a6e8d027c9f92a6d84283baaf566f5.js"></script>
+			<p>
+				wird funktionieren wie erwartet (einfach
+				<code>Hallo Welt</code> ausgeben und dann beenden). Dieses
+				Programm hier allerdings:
+			</p>
+			<script src="https://gist.github.com/leo848/65b6636128fbf8139727d74ab47ff832.js"></script>
+			<p>
+				nicht. (Falls du es nicht selbst testen möchtest: Es gibt zuerst
+				<code>Hallo Welt!</code> aus, wartet dann 3 Sekunden und gibt
+				dann erst <code>Hallo zurück!</code> aus.)<br />Das liegt an
+				sogenannten <i>Buffern</i>. Diese werden gleich beim Argument
+				<code>flush</code> ein Thema sein.
+			</p>
 
-            <ins class="adsbygoogle"
-            style="display:block; text-align:center;"
-            data-ad-layout="in-article"
-            data-ad-format="fluid"
-            data-ad-client="ca-pub-8678326294748904"
-            data-ad-slot="5921302792"></ins>
-       <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-       </script>
+			<ins
+				class="adsbygoogle"
+				style="display: block; text-align: center;"
+				data-ad-layout="in-article"
+				data-ad-format="fluid"
+				data-ad-client="ca-pub-8678326294748904"
+				data-ad-slot="5921302792"
+			></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 
-            <h4>3. Der Parameter <code>flush</code></h4>
-            <p>
-                Kurze Version: <br />Der Parameter <code>flush</code> sorgt
-                dafür, dass dein print-Statement sofort ausgeführt wird,
-                unabhängig von <code>end</code>.<br />
-                Lange Version: Wenn in Python das print-Statement ausgeführt
-                wird, werden die Argumente nicht direkt gedruckt. Sie werden an
-                ein IO-System (Input-Output) gedruckt. Und dieses hat in den
-                meisten Fällen (glücklicherweise) einen Buffer. Dieser sorgt
-                dafür, dass es nicht sofort gedruckt wird, sondern erst, wenn
-                einer dieser Konditionen wahr wird: <br />
-            </p>
-            <ul>
-                <li><code>\r</code> oder <code>\n</code> im String</li>
-                <li>Ende der Python-Datei wurde erreicht</li>
-                <li>
-                    Buffer ist "voll" (das heißt, das maximale Zeichenlimit für
-                    den Buffer wurde erreicht)
-                </li>
-                <li>
-                    Ein print-Statement mit <code>flush=True</code> wurde
-                    ausgeführt
-                </li>
-            </ul>
-            <p>
-                Nehmen wir einmal dieses Beispiel:
-            </p>
-            <script src="https://gist.github.com/leo848/cd5f33515f173fbd075e01c989196c29.js"></script>
-            <p>
-                Zuerst wird <code>Hallo </code>, dann
-                <code>Welt.</code> gedruckt, ohne einen Zeilenumbruch
-                dazwischen. Dazwischen liegt keine merkbare Verzögerung.
-            </p>
-            <h4>4. Der Parameter <code>file</code></h4>
-            <p>
-                Der Parameter <code>file</code> sorgt dafür, dass der Output
-                nicht in die Konsole ausgegeben wird, sondern in eine andere
-                Datei. Das Default ist hier <code>sys.stdout</code> (stdout für
-                standard output, oder Standardausgabe). Dies ist normalerweise
-                die Konsole in Python. Aber wenn du zu einer Datei schreiben
-                möchtest, kannst du dazu auch <code>print</code> mit dem
-                Argument <code>file</code> verwenden. Dies hier ist ein
-                Beispiel:
-            </p>
-            <script src="https://gist.github.com/leo848/f184f7a6d1c9a6824ad571288e56d660.js"></script>
-            
+			<h4>3. Der Parameter <code>flush</code></h4>
+			<p>
+				Kurze Version: <br />Der Parameter <code>flush</code> sorgt
+				dafür, dass dein print-Statement sofort ausgeführt wird,
+				unabhängig von <code>end</code>.<br />
+				Lange Version: Wenn in Python das print-Statement ausgeführt
+				wird, werden die Argumente nicht direkt gedruckt. Sie werden an
+				ein IO-System (Input-Output) gedruckt. Und dieses hat in den
+				meisten Fällen (glücklicherweise) einen Buffer. Dieser sorgt
+				dafür, dass es nicht sofort gedruckt wird, sondern erst, wenn
+				einer dieser Konditionen wahr wird: <br />
+			</p>
+			<ul>
+				<li><code>\r</code> oder <code>\n</code> im String</li>
+				<li>Ende der Python-Datei wurde erreicht</li>
+				<li>
+					Buffer ist "voll" (das heißt, das maximale Zeichenlimit für
+					den Buffer wurde erreicht)
+				</li>
+				<li>
+					Ein print-Statement mit <code>flush=True</code> wurde
+					ausgeführt
+				</li>
+			</ul>
+			<p>
+				Nehmen wir einmal dieses Beispiel:
+			</p>
+			<script src="https://gist.github.com/leo848/cd5f33515f173fbd075e01c989196c29.js"></script>
+			<p>
+				Zuerst wird <code>Hallo </code>, dann
+				<code>Welt.</code> gedruckt, ohne einen Zeilenumbruch
+				dazwischen. Dazwischen liegt keine merkbare Verzögerung.
+			</p>
+			<h4>4. Der Parameter <code>file</code></h4>
+			<p>
+				Der Parameter <code>file</code> sorgt dafür, dass der Output
+				nicht in die Konsole ausgegeben wird, sondern in eine andere
+				Datei. Das Default ist hier <code>sys.stdout</code> (stdout für
+				standard output, oder Standardausgabe). Dies ist normalerweise
+				die Konsole in Python. Aber wenn du zu einer Datei schreiben
+				möchtest, kannst du dazu auch <code>print</code> mit dem
+				Argument <code>file</code> verwenden. Dies hier ist ein
+				Beispiel:
+			</p>
+			<script src="https://gist.github.com/leo848/f184f7a6d1c9a6824ad571288e56d660.js"></script>
 
-            <ins class="adsbygoogle"
-            style="display:block; text-align:center;"
-            data-ad-layout="in-article"
-            data-ad-format="fluid"
-            data-ad-client="ca-pub-8678326294748904"
-            data-ad-slot="5921302792"></ins>
-       <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-       </script>
+			<ins
+				class="adsbygoogle"
+				style="display: block; text-align: center;"
+				data-ad-layout="in-article"
+				data-ad-format="fluid"
+				data-ad-client="ca-pub-8678326294748904"
+				data-ad-slot="5921302792"
+			></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 
-            <h4>Zusammenfassung</h4>
-            <ul>
-                <li>
-                    Das print-Statement in Python hat vier optionale Argumente:
-                    <code>sep</code>, <code>end</code>, <code>flush</code> und
-                    <code>file</code>.
-                </li>
-                <li>
-                    <code>sep</code> (engl. seperator) ist ein String, der die
-                    verschiedenen auszugebenden Argumente beim Ausgeben trennt.
-                    Normalwert "&nbsp;".
-                </li>
-                <li>
-                    <code>end</code> ist ein String, der am Ende angefügt wird.
-                    Normalwert "\n".
-                </li>
-                <li>
-                    <code>flush</code> ist entweder <code>True</code> oder
-                    <code>False</code>, es sagt, ob der String unabhängig vom
-                    Buffer sofort zu gedruckt werden soll. Normalwert False.
-                </li>
-                <li>
-                    <code>file</code> ist ein IO-Objekt, das den Output erhält.
-                    Normalwert sys.stdout, die Konsole.
-                </li>
-            </ul>
-            <br />
-            <a
-                href=".."
-                class="btn btn-primary btn-lg active"
-                role="button"
-                aria-pressed="true"
-                no-link
-                >Zurück zur Übersicht</a
-            >
-        </div>
+			<h4>Zusammenfassung</h4>
+			<ul>
+				<li>
+					Das print-Statement in Python hat vier optionale Argumente:
+					<code>sep</code>, <code>end</code>, <code>flush</code> und
+					<code>file</code>.
+				</li>
+				<li>
+					<code>sep</code> (engl. seperator) ist ein String, der die
+					verschiedenen auszugebenden Argumente beim Ausgeben trennt.
+					Normalwert "&nbsp;".
+				</li>
+				<li>
+					<code>end</code> ist ein String, der am Ende angefügt wird.
+					Normalwert "\n".
+				</li>
+				<li>
+					<code>flush</code> ist entweder <code>True</code> oder
+					<code>False</code>, es sagt, ob der String unabhängig vom
+					Buffer sofort zu gedruckt werden soll. Normalwert False.
+				</li>
+				<li>
+					<code>file</code> ist ein IO-Objekt, das den Output erhält.
+					Normalwert sys.stdout, die Konsole.
+				</li>
+			</ul>
+			<br />
+			<a
+				href=".."
+				class="btn btn-primary btn-lg active"
+				role="button"
+				aria-pressed="true"
+				no-link
+				>Zurück zur Übersicht</a
+			>
+		</div>
 
-        <footer>
-            <div class="copyright">
-                <p>
-                    &copy 2020 -
-                    <a href="https://leo848.github.io">Leo Blume</a
-                    ><a href="https://leo848.github.io/impressum">
-                        | Impressum</a
-                    >
-                </p>
-            </div>
-            <div class="social">
-                <a href="https://leo848.github.io/kontakt" class="support"
-                    >Kontakt</a
-                >
-                <a
-                    href="https://discord.gg/TDr2mrj"
-                    target="_blank"
-                    class="discord"
-                    ><i class="fab fa-discord"></i
-                ></a>
-                <a href="mailto:leoblume@gmx.de" class="tweet"
-                    ><i class="fas fa-envelope"></i
-                ></a>
-                <a
-                    href="https://www.github.com/leo848/leo848.github.io"
-                    class="linked"
-                    ><i class="fas fa-code"></i
-                ></a>
-            </div>
-        </footer>
-        <button onclick="topFunction()" id="myBtn" title="Go to top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-    </body>
+		<footer>
+			<div class="copyright">
+				<p>
+					&copy 2020 -
+					<a href="https://leo848.github.io">Leo Blume</a
+					><a href="https://leo848.github.io/impressum">
+						| Impressum</a
+					>
+				</p>
+			</div>
+			<div class="social">
+				<a href="https://leo848.github.io/kontakt" class="support"
+					>Kontakt</a
+				>
+				<a
+					href="https://discord.gg/TDr2mrj"
+					target="_blank"
+					class="discord"
+					><i class="fab fa-discord"></i
+				></a>
+				<a href="mailto:leoblume@gmx.de" class="tweet"
+					><i class="fas fa-envelope"></i
+				></a>
+				<a
+					href="https://www.github.com/leo848/leo848.github.io"
+					class="linked"
+					><i class="fas fa-code"></i
+				></a>
+			</div>
+		</footer>
+		<button onclick="topFunction()" id="myBtn" title="Go to top">
+			<i class="fas fa-arrow-up"></i>
+		</button>
+	</body>
 </html>

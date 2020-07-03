@@ -1,352 +1,360 @@
 <!DOCTYPE html>
 <html lang="de">
-    <head>
-        <title>
-            Python zu exe kompilieren - mit PyInstaller | leo848.github.io
-        </title>
-        <meta
-            name="description"
-            content="Es kommt ziemlich h&auml;ufig vor. Du hast ein Python-Skript und willst es jemandem anders zeigen. Aber derjenige hat nicht Python / bestimmte Module installiert und hat es auch nicht vor. Die L&ouml;sung? Kompiliere sie einfach zu .exe! Wie das geht, erf&auml;hrst du in diesem Tutorial."
-        />
-        <meta
-            name="google-site-verification"
-            content="w7c1Sr16VtH5GbJ_rKbexyTbWvg9Nix5RaAbENyK8j8"
-        />
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link
-            rel="stylesheet"
-            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        />
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-        <link rel="stylesheet" href="../../../assets/css/style.css" />
-        <link rel="stylesheet" href="../../../assets/css/footer.css" />
-        <script src="../../../assets/js/script.js" defer></script>
-        <link
-            rel="stylesheet"
-            href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
-            integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
-            crossorigin="anonymous"
-        />
-        <script src="https://cdn.jsdelivr.net/npm/mousetrap@1.6.5/mousetrap.min.js"></script>
-        <script
-            data-ad-client="ca-pub-8678326294748904"
-            async
-            src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
-        ></script>
-        <link
-            rel="apple-touch-icon"
-            sizes="180x180"
-            href="../../../assets/icons/apple-touch-icon.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="32x32"
-            href="../../../assets/icons/favicon-32x32.png"
-        />
-        <link
-            rel="icon"
-            type="image/png"
-            sizes="16x16"
-            href="../../../assets/icons/favicon-16x16.png"
-        />
-        <link rel="manifest" href="../../../assets/web/site.webmanifest" />
-    </head>
-    <body>
-        <div id="progressbar"></div>
-        <nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
-            <a class="navbar-brand" href="#">Leo Blume</a>
-            <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapsibleNavbar"
-            >
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavbar">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../.."
-                            >Home <span>&#127968;</span>
-                        </a>
-                    </li>
+	<head>
+		<title>
+			Python zu exe kompilieren - mit PyInstaller | leo848.github.io
+		</title>
+		<meta
+			name="description"
+			content="Es kommt ziemlich h&auml;ufig vor. Du hast ein Python-Skript und willst es jemandem anders zeigen. Aber derjenige hat nicht Python / bestimmte Module installiert und hat es auch nicht vor. Die L&ouml;sung? Kompiliere sie einfach zu .exe! Wie das geht, erf&auml;hrst du in diesem Tutorial."
+		/>
+		<meta
+			name="google-site-verification"
+			content="w7c1Sr16VtH5GbJ_rKbexyTbWvg9Nix5RaAbENyK8j8"
+		/>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link
+			rel="stylesheet"
+			href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+		/>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+		<link rel="stylesheet" href="../../assets/css/style.css" />
+		<link rel="stylesheet" href="../../assets/css/footer.css" />
+		<script src="../../assets/js/script.js" defer></script>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.7.0/css/all.css"
+			integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ"
+			crossorigin="anonymous"
+		/>
+		<script src="https://cdn.jsdelivr.net/npm/mousetrap@1.6.5/mousetrap.min.js"></script>
+		<script
+			data-ad-client="ca-pub-8678326294748904"
+			async
+			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+		></script>
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="../../assets/icons/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="../../assets/icons/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="../../assets/icons/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="../../assets/web/site.webmanifest" />
+	</head>
+	<body>
+		<div id="progressbar"></div>
+		<nav class="navbar navbar-expand-lg bg-dark navbar-dark sticky-top">
+			<a class="navbar-brand" href="#">Leo Blume</a>
+			<button
+				class="navbar-toggler"
+				type="button"
+				data-toggle="collapse"
+				data-target="#collapsibleNavbar"
+			>
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="collapsibleNavbar">
+				<ul class="navbar-nav">
+					<li class="nav-item">
+						<a class="nav-link" href="../../.."
+							>Home <span>&#127968;</span>
+						</a>
+					</li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../&Uuml;bermich"
-                            >&Uuml;ber mich <span>&#128102;</span></a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../informatik"
-                            >Informatik <span>&#128187;</span></a
-                        >
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../../../kontakt"
-                            >Kontakt <span>&#128233;</span></a
-                        >
-                    </li>
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../../../tutorials"
-                            >Tutorials <span>&#127891;</span></a
-                        >
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a
-                            class="nav-link dropdown-toggle"
-                            href="#"
-                            id="navbardrop"
-                            data-toggle="dropdown"
-                        >
-                            Projekte <span>&#128571;</span>
-                        </a>
-                        <div class="dropdown-menu">
-                            <a
-                                class="dropdown-item"
-                                href="https://leo848.github.io/draw"
-                                target="_blank"
-                                >Malprogramm &#128396;</a
-                            >
-                            <a
-                                class="dropdown-item"
-                                href="https://leo848.github.io/binary-clock"
-                                #
-                                target="_blank"
-                                >Bin&auml;ruhr &#8986;</a
-                            >
-                            <a
-                                class="dropdown-item"
-                                href="https://leo848.github.io/website/randomtext.html"
-                                target="_blank"
-                                >Zuf&auml;lliger Text &#9997;</a
-                            >
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        <ul class="breadcrumb">
-            <li class="breadcrumb-item"><a href="../..">Startseite</a></li>
-            <li class="breadcrumb-item"><a href="..">Tutorials</a></li>
-            <li class="breadcrumb-item"><a href="/">2020-06</a></li>
-            <li class="breadcrumb-item active">Python zu exe kompil...</li>
-        </ul>
+					<li class="nav-item">
+						<a class="nav-link" href="../../&uuml;bermich"
+							>&Uuml;ber mich <span>&#128102;</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../informatik"
+							>Informatik <span>&#128187;</span></a
+						>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="../../kontakt"
+							>Kontakt <span>&#128233;</span></a
+						>
+					</li>
+					<li class="nav-item active">
+						<a class="nav-link" href="../../tutorials"
+							>Tutorials <span>&#127891;</span></a
+						>
+					</li>
+					<li class="nav-item dropdown">
+						<a
+							class="nav-link dropdown-toggle"
+							href="#"
+							id="navbardrop"
+							data-toggle="dropdown"
+						>
+							Projekte <span>&#128571;</span>
+						</a>
+						<div class="dropdown-menu">
+							<a
+								class="dropdown-item"
+								href="https://leo848.github.io/draw"
+								target="_blank"
+								>Malprogramm &#128396;</a
+							>
+							<a
+								class="dropdown-item"
+								href="https://leo848.github.io/binary-clock"
+								#
+								target="_blank"
+								>Bin&auml;ruhr &#8986;</a
+							>
+							<a
+								class="dropdown-item"
+								href="https://leo848.github.io/website/randomtext.html"
+								target="_blank"
+								>Zuf&auml;lliger Text &#9997;</a
+							>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</nav>
+		<ul class="breadcrumb">
+			<li class="breadcrumb-item"><a href="../..">Startseite</a></li>
+			<li class="breadcrumb-item"><a href="..">Tutorials</a></li>
+			<li class="breadcrumb-item"><a href="/">2020-06</a></li>
+			<li class="breadcrumb-item active">Python zu exe kompil...</li>
+		</ul>
 
-        <div class="container">
-            <img
-                src="../../../assets/img/pyinstaller.png"
-                alt="Beispiel für die Verwendung von PyInstaller."
-            />
-            <h1>Python zu exe kompilieren - mit PyInstaller</h1>
-            <span class="badge badge-pill badge-primary">PyInstaller</span>
-            <span class="badge badge-pill badge-danger">Python</span
-            ><span class="badge badge-pill badge-warning">exe</span>
-            <h4>Schritt 1</h4>
-            <p>
-                Zuallererst musst du dir PyInstaller installieren. Das ist recht
-                einfach. Drücke <kbd>Win</kbd> + <kbd>R</kbd>, tippe in das sich
-                geöffnete Fenster <code>cmd</code> ein und bestätige dies mit
-                Enter.
-            </p>
+		<div class="container">
+			<img
+				src="../../assets/img/pyinstaller.png"
+				alt="Beispiel für die Verwendung von PyInstaller."
+			/>
+			<h1>Python zu exe kompilieren - mit PyInstaller</h1>
+			<span class="badge badge-pill badge-primary">PyInstaller</span>
+			<span class="badge badge-pill badge-danger">Python</span
+			><span class="badge badge-pill badge-warning">exe</span>
+			<h4>Schritt 1</h4>
+			<p>
+				Zuallererst musst du dir PyInstaller installieren. Das ist recht
+				einfach. Drücke <kbd>Win</kbd> + <kbd>R</kbd>, tippe in das sich
+				geöffnete Fenster <code>cmd</code> ein und bestätige dies mit
+				Enter.
+			</p>
 
-            <ins class="adsbygoogle"
-            style="display:block; text-align:center;"
-            data-ad-layout="in-article"
-            data-ad-format="fluid"
-            data-ad-client="ca-pub-8678326294748904"
-            data-ad-slot="5921302792"></ins>
-       <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-       </script>
+			<ins
+				class="adsbygoogle"
+				style="display: block; text-align: center;"
+				data-ad-layout="in-article"
+				data-ad-format="fluid"
+				data-ad-client="ca-pub-8678326294748904"
+				data-ad-slot="5921302792"
+			></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 
-            <img
-                src="../../assets/img/PyInstallerStep1.png"
-                alt="Die Eingabeaufforderung öffnen"
-            />
-            <h4>Schritt 2</h4>
-            <p>
-                Das Fenster, welches du nun geöffnet hast, nennt sich
-                Eingabeaufforderung. Du kannst damit zum Beispiel auch deine
-                Python-Dateien ausführen. Um zu testen, ob du
-                <code>pip</code> korrekt mit Python zusammen installiert hast,
-                gib einfach <code>pip</code> in die Eingabeaufforderung ein.
-                Wenn du Enter drückst, sollte dies hier etwa der Output sein:
-            </p>
-            <img
-                src="../../assets/img/PyInstallerStep2.png"
-                alt="Installation von PIP testen"
-            />
-            <p>
-                Falls dies nicht der Output ist und du stattdessen etwas wie das
-                hier siehst, solltest du erst einmal testen, stattdessen
-                <code>pip3</code> zu verwenden. Funktioniert dies auch nicht,
-                solltest du Python neu installieren.
-            </p>
-            <img
-                src="../../assets/img/PyInstallerStep2Wrong.png"
-                alt="Fon PIP"
-            />
+			<img
+				src="../../assets/img/PyInstallerStep1.png"
+				alt="Die Eingabeaufforderung öffnen"
+			/>
+			<h4>Schritt 2</h4>
+			<p>
+				Das Fenster, welches du nun geöffnet hast, nennt sich
+				Eingabeaufforderung. Du kannst damit zum Beispiel auch deine
+				Python-Dateien ausführen. Um zu testen, ob du
+				<code>pip</code> korrekt mit Python zusammen installiert hast,
+				gib einfach <code>pip</code> in die Eingabeaufforderung ein.
+				Wenn du Enter drückst, sollte dies hier etwa der Output sein:
+			</p>
+			<img
+				src="../../assets/img/PyInstallerStep2.png"
+				alt="Installation von PIP testen"
+			/>
+			<p>
+				Falls dies nicht der Output ist und du stattdessen etwas wie das
+				hier siehst, solltest du erst einmal testen, stattdessen
+				<code>pip3</code> zu verwenden. Funktioniert dies auch nicht,
+				solltest du Python neu installieren.
+			</p>
+			<img
+				src="../../assets/img/PyInstallerStep2Wrong.png"
+				alt="Fon PIP"
+			/>
 
-            <ins class="adsbygoogle"
-     style="display:block; text-align:center;"
-     data-ad-layout="in-article"
-     data-ad-format="fluid"
-     data-ad-client="ca-pub-8678326294748904"
-     data-ad-slot="5921302792"></ins>
-<script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-</script>
+			<ins
+				class="adsbygoogle"
+				style="display: block; text-align: center;"
+				data-ad-layout="in-article"
+				data-ad-format="fluid"
+				data-ad-client="ca-pub-8678326294748904"
+				data-ad-slot="5921302792"
+			></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 
-            <h4>Schritt 3</h4>
-            <p>
-                Gib <code>pip install pyinstaller</code> ein. Am Ende sollte als
-                Output entweder
-                <code>Successfully installed pyinstaller-x.x</code> oder
-                <code
-                    >Requirement already satisfied: pyinstaller in ...
-                    (x.x)</code
-                >
-                sein.
-            </p>
-            <img
-                src="../../assets/img/PyInstallerStep3.png"
-                alt="Die Installation von PyInstaller ist abgeschlossen."
-            />
-            <img
-                src="../../assets/img/PyInstallerStep3AlreadyInstalled.png"
-                alt="PyInstaller ist bereits installiert worden."
-            />
+			<h4>Schritt 3</h4>
+			<p>
+				Gib <code>pip install pyinstaller</code> ein. Am Ende sollte als
+				Output entweder
+				<code>Successfully installed pyinstaller-x.x</code> oder
+				<code
+					>Requirement already satisfied: pyinstaller in ...
+					(x.x)</code
+				>
+				sein.
+			</p>
+			<img
+				src="../../assets/img/PyInstallerStep3.png"
+				alt="Die Installation von PyInstaller ist abgeschlossen."
+			/>
+			<img
+				src="../../assets/img/PyInstallerStep3AlreadyInstalled.png"
+				alt="PyInstaller ist bereits installiert worden."
+			/>
 
-            <ins class="adsbygoogle"
-            style="display:block; text-align:center;"
-            data-ad-layout="in-article"
-            data-ad-format="fluid"
-            data-ad-client="ca-pub-8678326294748904"
-            data-ad-slot="5921302792"></ins>
-       <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-       </script>
+			<ins
+				class="adsbygoogle"
+				style="display: block; text-align: center;"
+				data-ad-layout="in-article"
+				data-ad-format="fluid"
+				data-ad-client="ca-pub-8678326294748904"
+				data-ad-slot="5921302792"
+			></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 
-            <h4>Schritt 4</h4>
-            <p>
-                Navigiere mithilfe von <code>cd</code> zu dem Ordner, indem sich
-                eure Python-Datei befindet. Meine Python-Datei ist im
-                Verzeichnis C:/Desktop/projects/quiz, also werde ich dorthin
-                navigieren.
-            </p>
-            <img
-                src="../../assets/img/PyInstallerStep4.png"
-                alt="Mithilfe von cd im cmd zum Ort des Projekts navigieren"
-            />
-            <h4>Schritt 5</h4>
-            <p>
-                Gebe nun das folgende ein: <br /><code
-                    >pyinstaller --onefile [Relativer Pfad zur Datei, die du
-                    kompilieren möchtest]</code
-                ><br />
-                Das <code>--onefile</code> sorgt in diesem Fall dafür, dass eine
-                .exe-Datei erstellt wird. Ohne dieses Argument wird eine
-                .exe-Datei mit vielen .dll-Dateien erstellt, was man meistens
-                nicht möchte. Falls du eine Python-Datei hast, die nicht die
-                Konsole nutzt (wie zum Beispiel eine GUI oder ein
-                Nicht-Konsolen-Spiel), kannst du auch
-                <code>--noconsole</code> als optionales Argument verwenden.
-                Falls du ein Icon für deine .exe-Datei verwenden möchtest, nutze
-                -i und dann den Pfad zur Datei. Sie sollte im .ico-Format sein,
-                dazu gibt es Online-Converter wie
-                <a href="https://www.convertico.com">ConvertICO</a>.
-                <img
-                    src="../../assets/img/PyInstallerStep5.png"
-                    alt="Wie ich PyInstaller am häufigsten verwende"
-                />
-            </p>
-            <h4>Schritt 6</h4>
-            <p>
-                Es werden zuerst viele Zahlen und Wörter ausgegeben, aber am
-                Ende sollte dies zu sehen sein:
-                <img
-                    src="../../assets/img/PyInstallerStep6Finished.png"
-                    alt="PyInstaller hat funktioniert"
-                />
-                Es könnte natürlich eine andere Zahl zu sehen sein. Falls es
-                allerdings einen Error gibt, liegt es in 90% aller Fälle an
-                nicht kompatiblen Modulen. Im Verzeichnis der Python-Datei wirst
-                du nun zwei neue Ordner und eine neue Datei sehen. Erst einmal
-                eine Datei mit der Dateiendung .spec. Diese Datei brauchst du,
-                wenn du erneut eine .exe erstellen möchtest, aber es schneller
-                gehen soll. Falls du das nicht möchtest, kannst du sie löschen.
-                Dann hast du zwei Ordner, <code>build</code> und
-                <code>dist</code>. <code>build</code> kannst du getrost löschen,
-                es sei denn, du hast einen Error. Dann wären dort alle
-                Fehlermeldungen gelistet. Der Ordner, der uns interessiert, ist
-                <code>dist</code>. In diesem befindet sich im
-                <code>--onefile</code>-Modus eine .exe-Datei, falls du nicht
-                <code>--onefile</code> verwendest, eine .exe-Datei und mehrere
-                mit der Dateiendung dll. Wenn deine Python-Datei keine weiteren
-                relativen Dateien verwendet, kannst du sie einfach so verwenden.
-                Starte einfach die .exe und es sollte so sein, als startetest du
-                die Python-Datei. Falls du aber Assets mit einem relativen Pfad
-                hast, musst du die Anwendung in das Verzeichnis der Python-Datei
-                verschieben. Dann sollte alles so funktionieren, wie es gedacht
-                wurde.
-            </p>
+			<h4>Schritt 4</h4>
+			<p>
+				Navigiere mithilfe von <code>cd</code> zu dem Ordner, indem sich
+				eure Python-Datei befindet. Meine Python-Datei ist im
+				Verzeichnis C:/Desktop/projects/quiz, also werde ich dorthin
+				navigieren.
+			</p>
+			<img
+				src="../../assets/img/PyInstallerStep4.png"
+				alt="Mithilfe von cd im cmd zum Ort des Projekts navigieren"
+			/>
+			<h4>Schritt 5</h4>
+			<p>
+				Gebe nun das folgende ein: <br /><code
+					>pyinstaller --onefile [Relativer Pfad zur Datei, die du
+					kompilieren möchtest]</code
+				><br />
+				Das <code>--onefile</code> sorgt in diesem Fall dafür, dass eine
+				.exe-Datei erstellt wird. Ohne dieses Argument wird eine
+				.exe-Datei mit vielen .dll-Dateien erstellt, was man meistens
+				nicht möchte. Falls du eine Python-Datei hast, die nicht die
+				Konsole nutzt (wie zum Beispiel eine GUI oder ein
+				Nicht-Konsolen-Spiel), kannst du auch
+				<code>--noconsole</code> als optionales Argument verwenden.
+				Falls du ein Icon für deine .exe-Datei verwenden möchtest, nutze
+				-i und dann den Pfad zur Datei. Sie sollte im .ico-Format sein,
+				dazu gibt es Online-Converter wie
+				<a href="https://www.convertico.com">ConvertICO</a>.
+				<img
+					src="../../assets/img/PyInstallerStep5.png"
+					alt="Wie ich PyInstaller am häufigsten verwende"
+				/>
+			</p>
+			<h4>Schritt 6</h4>
+			<p>
+				Es werden zuerst viele Zahlen und Wörter ausgegeben, aber am
+				Ende sollte dies zu sehen sein:
+				<img
+					src="../../assets/img/PyInstallerStep6Finished.png"
+					alt="PyInstaller hat funktioniert"
+				/>
+				Es könnte natürlich eine andere Zahl zu sehen sein. Falls es
+				allerdings einen Error gibt, liegt es in 90% aller Fälle an
+				nicht kompatiblen Modulen. Im Verzeichnis der Python-Datei wirst
+				du nun zwei neue Ordner und eine neue Datei sehen. Erst einmal
+				eine Datei mit der Dateiendung .spec. Diese Datei brauchst du,
+				wenn du erneut eine .exe erstellen möchtest, aber es schneller
+				gehen soll. Falls du das nicht möchtest, kannst du sie löschen.
+				Dann hast du zwei Ordner, <code>build</code> und
+				<code>dist</code>. <code>build</code> kannst du getrost löschen,
+				es sei denn, du hast einen Error. Dann wären dort alle
+				Fehlermeldungen gelistet. Der Ordner, der uns interessiert, ist
+				<code>dist</code>. In diesem befindet sich im
+				<code>--onefile</code>-Modus eine .exe-Datei, falls du nicht
+				<code>--onefile</code> verwendest, eine .exe-Datei und mehrere
+				mit der Dateiendung dll. Wenn deine Python-Datei keine weiteren
+				relativen Dateien verwendet, kannst du sie einfach so verwenden.
+				Starte einfach die .exe und es sollte so sein, als startetest du
+				die Python-Datei. Falls du aber Assets mit einem relativen Pfad
+				hast, musst du die Anwendung in das Verzeichnis der Python-Datei
+				verschieben. Dann sollte alles so funktionieren, wie es gedacht
+				wurde.
+			</p>
 
-            <ins class="adsbygoogle"
-            style="display:block; text-align:center;"
-            data-ad-layout="in-article"
-            data-ad-format="fluid"
-            data-ad-client="ca-pub-8678326294748904"
-            data-ad-slot="5921302792"></ins>
-       <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-       </script>
+			<ins
+				class="adsbygoogle"
+				style="display: block; text-align: center;"
+				data-ad-layout="in-article"
+				data-ad-format="fluid"
+				data-ad-client="ca-pub-8678326294748904"
+				data-ad-slot="5921302792"
+			></ins>
+			<script>
+				(adsbygoogle = window.adsbygoogle || []).push({});
+			</script>
 
-            <br /><a
-                href=".."
-                class="btn btn-primary btn-lg active"
-                role="button"
-                aria-pressed="true"
-                no-link
-                >Zur&uuml;ck zur &Uuml;bersicht</a
-            >
-        </div>
+			<br /><a
+				href=".."
+				class="btn btn-primary btn-lg active"
+				role="button"
+				aria-pressed="true"
+				no-link
+				>Zur&uuml;ck zur &Uuml;bersicht</a
+			>
+		</div>
 
-        <footer>
-            <div class="copyright">
-                <p>
-                    &copy 2020 -
-                    <a href="https://leo848.github.io">Leo Blume</a
-                    ><a href="https://leo848.github.io/impressum">
-                        | Impressum</a
-                    >
-                </p>
-            </div>
-            <div class="social">
-                <a href="https://leo848.github.io/kontakt" class="support"
-                    >Kontakt</a
-                >
-                <a
-                    href="https://discord.gg/TDr2mrj"
-                    target="_blank"
-                    class="discord"
-                    ><i class="fab fa-discord"></i
-                ></a>
-                <a href="mailto:leoblume@gmx.de" class="tweet"
-                    ><i class="fas fa-envelope"></i
-                ></a>
-                <a
-                    href="https://www.github.com/leo848/leo848.github.io"
-                    class="linked"
-                    ><i class="fas fa-code"></i
-                ></a>
-            </div>
-        </footer>
-        <button onclick="topFunction()" id="myBtn" title="Go to top">
-            <i class="fas fa-arrow-up"></i>
-        </button>
-    </body>
+		<footer>
+			<div class="copyright">
+				<p>
+					&copy 2020 -
+					<a href="https://leo848.github.io">Leo Blume</a
+					><a href="https://leo848.github.io/impressum">
+						| Impressum</a
+					>
+				</p>
+			</div>
+			<div class="social">
+				<a href="https://leo848.github.io/kontakt" class="support"
+					>Kontakt</a
+				>
+				<a
+					href="https://discord.gg/TDr2mrj"
+					target="_blank"
+					class="discord"
+					><i class="fab fa-discord"></i
+				></a>
+				<a href="mailto:leoblume@gmx.de" class="tweet"
+					><i class="fas fa-envelope"></i
+				></a>
+				<a
+					href="https://www.github.com/leo848/leo848.github.io"
+					class="linked"
+					><i class="fas fa-code"></i
+				></a>
+			</div>
+		</footer>
+		<button onclick="topFunction()" id="myBtn" title="Go to top">
+			<i class="fas fa-arrow-up"></i>
+		</button>
+	</body>
 </html>
